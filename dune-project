@@ -1,4 +1,4 @@
-(lang dune 3.10)
+(lang dune 3.7)
 
 (name webserver)
 
@@ -7,9 +7,9 @@
 (source
  (github username/reponame))
 
-(authors "Author Name")
+(authors "Ethan Thoma")
 
-(maintainers "Maintainer Name")
+(maintainers "Ethan Thoma")
 
 (license LICENSE)
 
@@ -17,10 +17,10 @@
 
 (package
  (name webserver)
- (synopsis "A short synopsis")
- (description "A longer description")
- (depends ocaml dune opium reason)
+ (synopsis "Htmx webserver")
+ (description "Htmx webserver")
+ (depends ocaml dune opium reason tyxml-jsx easy_logging)
  (tags
-  (topics "to describe" your project)))
+  (topics "Htmx" "JSX" "Ocaml")))
 
 ; See the complete stanza docs at https://dune.readthedocs.io/en/stable/dune-files.html#dune-project

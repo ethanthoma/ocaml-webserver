@@ -17,14 +17,18 @@
             scope = on.buildDuneProject { } package ./. { 
                 ocaml-base-compiler = "*"; 
                 opium = "*";
-                embedded_ocaml_templates = "*";
+                reason = "*";
+                tyxml-jsx = "*";
+                easy_logging = "*";
             };
 
             overlay = final: prev: {
                 ${package} = prev.${package}.overrideAttrs (oa: {
                     buildInputs = oa.buildInputs ++ [ 
                         final.opium 
-                        final.embedded_ocaml_templates
+                        final.reason
+                        final.tyxml-jsx
+                        final.easy_logging
                     ];
                     buildPhase = "dune build --release"; 
                 });
