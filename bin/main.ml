@@ -1,12 +1,19 @@
 open Opium
 
-let get_name_handler _ = Template.mypage |> 
+let index_handler _ = 
+    Index.view |> 
     Response.of_html |> 
+    Lwt.return
+
+let get_tab_handler req = 
+    let num = Router.param req "num" in
+    Tab.view ~num |>
     Lwt.return
 ;;
 
 let _ = 
     App.empty |>
-    App.get "/hello/:name" get_name_handler |>
+    App.get "/" index_handler |>
+    App.get "/tab/:num" get_tab_handler |>
     App.run_command
-;;
+;; 
