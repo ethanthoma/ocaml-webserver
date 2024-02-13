@@ -1,0 +1,5 @@
+(executable
+  (public_name webserver)
+  (name main)
+  (libraries webserver opium tyxml)
+  (preprocess (pps tyxml-jsx)))
