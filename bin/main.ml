@@ -10,6 +10,11 @@ let log =
     in Rock.Middleware.create ~filter ~name:"Logger"
 ;;
 
+let static =
+    Middleware.static_unix 
+        ~local_path:"./assets/" 
+        ~uri_prefix:"/assets/" ()
+
 let index_handler _ = 
     Index.view |> 
     Response.of_html |> 
@@ -25,8 +30,9 @@ let get_tab_handler req =
 let _ = 
     let open App in
     empty |>
-    get "/" index_handler |>
     middleware log |>
+    middleware static |>
+    get "/" index_handler |>
     get "/tab/:num" get_tab_handler |>
     run_command
 ;; 
