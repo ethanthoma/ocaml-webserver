@@ -2,10 +2,12 @@ open Tyxml;
 
 let my_title = Html.txt("A Fabulous Web Page");
 
+let htmx = <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+
 let view =
     <html>
         <head> 
-            <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+            htmx
             <title> my_title </title> 
         </head>
         <body> 
