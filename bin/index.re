@@ -13,6 +13,14 @@ let search_bar =
                 "Searching..."
             </span> 
         </h3>
+        <input 
+            className="form-control" 
+            name="search" 
+            placeholder="Begin Typing To Search Users..." 
+            _hx_post="/search" 
+            _hx_trigger="input changed delay:50ms, search" 
+            _hx_target="#search-results" 
+            _hx_indicator=".htmx-indicator"/>
    </div>
 
 let nav_bar = <div id="tabs" _hx_get="/tab/1" _hx_trigger="load delay:100ms" _hx_target="#tabs" _hx_swap="innerHTML"></div>
@@ -30,9 +38,7 @@ let view =
             <table className="table">
                 <thead>
                     <tr>
-                        <th>"First Name"</th>
-                        <th>"Last Name"</th>
-                        <th>"Email"</th>
+                        <th>"Entries"</th>
                     </tr>
                 </thead>
                     <tbody id="search-results">

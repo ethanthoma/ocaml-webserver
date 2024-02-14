@@ -19,7 +19,7 @@
  (name webserver)
  (synopsis "Htmx webserver")
  (description "Htmx webserver")
- (depends ocaml dune opium reason tyxml-jsx easy_logging)
+ (depends ocaml dune opium reason tyxml-jsx easy_logging fuzzy_match)
  (tags
   (topics "Htmx" "JSX" "Ocaml")))
 

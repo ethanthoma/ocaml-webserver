@@ -1,5 +1,5 @@
 (executable
   (public_name webserver)
   (name main)
-  (libraries webserver opium tyxml easy_logging)
+  (libraries opium tyxml easy_logging fuzzy_match.search)
   (preprocess (pps tyxml-jsx)))

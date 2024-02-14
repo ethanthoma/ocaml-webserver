@@ -16,6 +16,7 @@ depends: [
   "reason"
   "tyxml-jsx"
   "easy_logging"
+  "fuzzy_match"
   "odoc" {with-doc}
 ]
 build: [

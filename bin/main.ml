@@ -27,6 +27,16 @@ let get_tab_handler req =
     Lwt.return
 ;;
 
+let post_search_handler (request: Request.t) =
+    Lwt.bind
+        (request |> Request.urlencoded_exn "search")
+    @@
+    fun query -> 
+    query |>
+    Search.view |>
+    Lwt.return
+;;
+
 let _ = 
     let open App in
     empty |>
@@ -34,5 +44,6 @@ let _ =
     middleware static |>
     get "/" index_handler |>
     get "/tab/:num" get_tab_handler |>
+    post "/search" post_search_handler |>
     run_command
 ;; 
