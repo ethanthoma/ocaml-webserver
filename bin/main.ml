@@ -37,6 +37,12 @@ let post_search_handler (request: Request.t) =
     Lwt.return
 ;;
 
+let get_blog_handler (request: Request.t) =
+    let name = Router.param request "name" in
+    Blog.to_response name |>
+    Lwt.return
+;;
+
 let _ = 
     let open App in
     empty |>
@@ -45,5 +51,6 @@ let _ =
     get "/" index_handler |>
     get "/tab/:num" get_tab_handler |>
     post "/search" post_search_handler |>
+    get "/blogs/:name" get_blog_handler |>
     run_command
 ;; 

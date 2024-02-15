@@ -21,6 +21,7 @@
                 tyxml-jsx = "*";
                 easy_logging = "*";
                 fuzzy_match = "*";
+                omd = "*";
             };
 
             overlay = final: prev: {
@@ -31,6 +32,7 @@
                         final.tyxml-jsx
                         final.easy_logging
                         final.fuzzy_match
+                        final.omd
                     ];
                     buildPhase = "dune build --release"; 
                 });
