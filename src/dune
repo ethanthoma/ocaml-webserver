@@ -1,0 +1,6 @@
+(executable
+  (public_name webserver)
+  (name main)
+  (libraries components opium tyxml easy_logging fuzzy_match.search omd str)
+  (preprocess (pps tyxml-jsx))
+)

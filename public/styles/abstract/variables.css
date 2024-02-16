@@ -1,0 +1,49 @@
+:root {
+    /* color */
+    --clr-base:         hsl(249deg, 22%, 12%);
+    --clr-surface:      hsl(247deg, 23%, 15%);
+    --clr-overlay:      hsl(248deg, 25%, 18%);
+    --clr-muted:        hsl(249deg, 12%, 47%);
+    --clr-subtle:       hsl(248deg, 15%, 61%);
+    --clr-text:         hsl(245deg, 50%, 91%);
+    --clr-gold:         hsl(35deg, 88%, 72%);
+    --clr-pine:         hsl(197deg, 49%, 38%);
+    --clr-foam:         hsl(189deg, 43%, 73%);
+    --clr-high:         hsl(248deg, 13%, 36%);
+
+    /* font family */
+    --ff-heading:   'Montserrat', sans-serif;
+    --ff-body:      'Hind', sans-serif;
+
+    /* font size */
+    --fs-100: clamp(0.7813rem, 0.7748rem + 0.0325vw, 0.8rem);
+    --fs-200: clamp(0.9375rem, 0.9159rem + 0.1085vw, 1rem);
+    --fs-300: clamp(1.125rem, 1.0819rem + 0.2169vw, 1.25rem);
+    --fs-400: clamp(1.35rem, 1.2767rem + 0.3688vw, 1.5625rem);
+    --fs-500: clamp(1.62rem, 1.5051rem + 0.5781vw, 1.9531rem);
+    --fs-600: clamp(1.9438rem, 1.7722rem + 0.8633vw, 2.4413rem);
+    --fs-700: clamp(2.3325rem, 2.0844rem + 1.2484vw, 3.0519rem);
+    --fs-800: clamp(2.7994rem, 2.4491rem + 1.7625vw, 3.815rem);
+
+    /* space */
+    --space-3xs:    clamp(0.3125rem, 0.3125rem + 0vw, 0.3125rem);
+    --space-2xs:    clamp(0.5625rem, 0.5409rem + 0.1085vw, 0.625rem);
+    --space-xs:     clamp(0.875rem, 0.8534rem + 0.1085vw, 0.9375rem);
+    --space-s:      clamp(1.125rem, 1.0819rem + 0.2169vw, 1.25rem);
+    --space-m:      clamp(1.6875rem, 1.6228rem + 0.3254vw, 1.875rem);
+    --space-l:      clamp(2.25rem, 2.1638rem + 0.4338vw, 2.5rem);
+    --space-xl:     clamp(3.375rem, 3.2457rem + 0.6508vw, 3.75rem);
+    --space-2xl:    clamp(4.5rem, 4.3275rem + 0.8677vw, 5rem);
+    --space-3xl:    clamp(6.75rem, 6.4913rem + 1.3015vw, 7.5rem);
+
+    --space-3xs-2xs:    clamp(0.3125rem, 0.2047rem + 0.5423vw, 0.625rem);
+    --space-2xs-xs:     clamp(0.5625rem, 0.4332rem + 0.6508vw, 0.9375rem);
+    --space-xs-s:       clamp(0.875rem, 0.7457rem + 0.6508vw, 1.25rem);
+    --space-s-m:        clamp(1.125rem, 0.8663rem + 1.3015vw, 1.875rem);
+    --space-m-l:        clamp(1.6875rem, 1.4073rem + 1.41vw, 2.5rem);
+    --space-l-xl:       clamp(2.25rem, 1.7326rem + 2.603vw, 3.75rem);
+    --space-xl-2xl:     clamp(3.375rem, 2.8145rem + 2.82vw, 5rem);
+    --space-2xl-3xl:    clamp(4.5rem, 3.4653rem + 5.2061vw, 7.5rem);
+
+    --space-s-l: clamp(1.125rem, 0.6508rem + 2.3861vw, 2.5rem);
+}

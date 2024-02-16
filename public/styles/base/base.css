@@ -1,0 +1,132 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background:     var(--clr-base);
+    color:          var(--clr-text);
+    font-family:    var(--ff-body);
+    font-size:      var(--fs-300);
+    line-height:    1.5;
+    letter-spacing: 0.05em;
+
+    & > *, & > footer > * {
+        max-width: 95%;
+        width: 780px;
+
+        margin-inline: auto;
+
+        padding-block: var(--space-xs-s);
+        padding-inline: var(--space-s-l);
+    }
+}
+
+h1, h2, h3 {
+    font-family:    var(--ff-heading);
+    letter-spacing: -0.01em;
+    line-height:    1.2;
+}
+
+h1 {
+    font-size: var(--fs-600);
+}
+
+h2 {
+    font-size: var(--fs-500);
+}
+
+h3 {
+    font-size: var(--fs-400);
+}
+
+.hidden {
+    clip:           rect(0 0 0 0);
+    clip-path:      inset(50%);
+    height:         0px;
+    overflow:       hidden;
+    position:       absolute;
+    white-space:    nowrap;
+    width:          0px;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.bold, strong {
+    font-weight:    600;
+    font-style:     normal;
+}
+
+footer {
+    margin-block-start: var(--space-l-xl);
+    padding-block: var(--space-3xl);
+
+    border-block-start: 2px solid var(--clr-high);
+
+    text-align: center;
+}
+
+article {
+    background: var(--clr-surface);
+
+    border-radius:  var(--space-3xs-2xs);
+
+    padding-block: var(--space-m-l);
+    padding-inline: var(--space-m-l);
+
+    /* margin spacing */
+    & > * + * {
+        --_margin-top:  var(--space-xs-s);
+
+        margin-top:     var(--_margin-top);
+    }
+
+    & > * + button {
+        --_margin-top:  var(--space-l-xl);
+    }
+
+    & > * + h1,
+    & > * + h2,
+    & > * + h3 {
+        --_margin-top:  var(--space-m-l);
+    }
+
+    & ul {
+        list-style-position: inside;
+    }
+
+    & pre {
+        padding: var(--space-xs);
+        background: var(--clr-overlay);
+        font-size: var(--fs-200);
+        overflow-x: auto;
+
+        & > code {
+            word-wrap: break-word;
+        }
+    }
+}
+
+::-webkit-scrollbar {
+    width: 15px;
+    background: transparent;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--clr-base);
+    box-shadow: inset 0 0 0 1px var(--clr-high);
+    border-radius: var(--space-3xs);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--clr-muted);
+    border-radius: var(--space-3xs);
+    border: 3px solid transparent;
+    
+   background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--clr-subtle);
+}

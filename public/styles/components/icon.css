@@ -1,0 +1,27 @@
+.icon {
+    display: inline-block;
+
+    font-size: inherit;
+    width: 1em;
+    height: 1em;
+
+    contain: strict;
+
+    color: var(--clr-text);
+    fill: currentColor;
+
+    box-sizing: content-box !important;
+
+    & .content {
+        stroke: currentColor;
+        font-size: inherit;
+
+        & * {
+            display: block;
+            font-size: inherit;
+
+            height: 100%;
+            width: 100%;
+        }
+    }
+}
