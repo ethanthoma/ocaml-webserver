@@ -3,7 +3,7 @@ open Components
 
 let title = Html.txt("Ethan Thoma")
 
-let htmx = <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+let htmx = <script src="/public/js/htmx.min.js"></script>
 
 let style = <link rel="stylesheet" href="/public/styles/main.css"/>
 

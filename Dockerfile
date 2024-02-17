@@ -1,18 +1,11 @@
-FROM nixos/nix:latest AS builder
+FROM nixos/nix:latest
 
-COPY . /tmp/build
-WORKDIR /tmp/build
+COPY . .
+WORKDIR .
 
 RUN nix \
     --extra-experimental-features "nix-command flakes" \
     --option filter-syscalls false \
     build
 
-RUN mkdir /tmp/nix-store-closure
-RUN cp -R $(nix-store -qR result/) /tmp/nix-store-closure
-
-FROM scratch
-
-COPY --from=builder /tmp/nix-store-closure /nix/store
-COPY --from=builder /tmp/build/result /app
-CMD ["/app/bin/webserver"]
+CMD ["/result/bin/webserver"]
