@@ -1,5 +1,4 @@
 open Tyxml;
-open Fuzzy_search;
 
 let bar =
     <div id="search-bar">
@@ -33,26 +32,3 @@ let row = (filename: string) =>
             {Html.txt(filename)}
         </button>
     </li>
-
-
-let list_md_files = {
-    let files = Array.to_list(Sys.readdir("./blogs"));
-    List.filter(file => Filename.extension(file) == ".md", files);
-}
-
-let query = (name) => {
-    search(Query.create(name), ~items=list_md_files);
-}
-
-let view = (filename) => {
-    if (filename == "") {
-        View.make([]);
-    } else {
-        View.make(
-            List.map(
-                row,
-                query(filename)
-            )
-        );
-    }
-};

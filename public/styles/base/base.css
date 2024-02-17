@@ -64,6 +64,7 @@ footer {
 
     border-block-start: 2px solid var(--clr-high);
 
+    font-size: var(--fs-100);
     text-align: center;
 }
 

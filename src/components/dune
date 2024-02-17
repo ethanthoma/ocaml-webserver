@@ -1,5 +1,5 @@
 (library
   (name components)
-  (libraries opium tyxml easy_logging fuzzy_match.search omd str)
+  (libraries opium tyxml)
   (preprocess (pps tyxml-jsx))
 )
