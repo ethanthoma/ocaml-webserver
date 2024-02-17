@@ -33,6 +33,8 @@
                         final.easy_logging
                         final.fuzzy_match
                         final.omd
+
+                        pkgs.bash
                     ];
                     buildPhase = "dune build --release"; 
                 });

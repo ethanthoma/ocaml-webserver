@@ -3,8 +3,6 @@ FROM nixos/nix:latest AS builder
 COPY . /tmp/build
 WORKDIR /tmp/build
 
-RUN nix-channel --update
-
 RUN nix \
     --extra-experimental-features "nix-command flakes" \
     --option filter-syscalls false \
