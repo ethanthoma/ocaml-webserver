@@ -51,18 +51,12 @@
                 name = "webserver";
                 tag = "latest";
                 created = "now";
-                fromImage = pkgs.dockerTools.pullImage {
-                    imageName = "alpine";
-                    imageDigest = "sha256:c5b1261d6d3e43071626931fc004f70149baeba2c8ec672bd4f27761f8e1ad6b";
-                    sha256 = "0h4k892b3izv6ypk3w07z96asmpr987cmbcianajhdk0kz4z62my";
-                    finalImageName = "alpine";
-                    finalImageTag = "3.19.1";
-                };
                 copyToRoot = pkgs.buildEnv {
                     name = "webserver";
                     paths = [
                         default
-                        pkgs.coreutils
+                        pkgs.bash
+                        pkgs.getconf
                     ];
                     pathsToLink = [ "/bin" "/public" "/blogs" ];
                 };

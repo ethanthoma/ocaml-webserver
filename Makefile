@@ -1,4 +1,4 @@
-.PHONY: run
+.PHONY: healthy
 
 IMAGE_NAME = webserver
 TAG = latest
@@ -14,6 +14,7 @@ run: build
 
 healthy:
 	wget $(LOCAL_HOST)/healthy
+	rm healthy
 
 clean:
 	-docker stop $(CONTAINER_NAME)
