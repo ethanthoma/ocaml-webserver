@@ -1,17 +1,24 @@
-# Ocaml Blog Website
+# Blog Website
 
 This is a really simple blogging website made in Ocaml (and reasonml).
 
-## Stack(?)
+## Stack
 
+- ReasonML for JSX templating
 - Ocaml backend
-- ReasonML JSX for templating
-- Htmx for my "framework"
+- Htmx
 
-## Notes
+## TODO
 
-- The code is not pretty but it works. Try the nix flake for easy building.
+- Add meta-data for blogs
+- Probably a db for storing blogs
+- Better way to search all blogs
 
 ## Installation
 
-Just use the nix flake command and build!
+The nix flake has two build targets:
+1. dune project derivation: produces a binary that one can run as is
+2. docker image: produces a minimal image that contains the derivation
+
+The derivation can be built with `nix build` and the image can be built with 
+`nix build .#image`.

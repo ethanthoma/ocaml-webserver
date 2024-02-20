@@ -3,6 +3,11 @@ html {
 }
 
 body {
+    --transition-timing-function: cubic-bezier(.4,0,.2,1);
+    --transition-duration: .15s;
+
+    max-width: 100dvw;
+
     background:     var(--clr-base);
     color:          var(--clr-text);
     font-family:    var(--ff-body);
@@ -11,13 +16,12 @@ body {
     letter-spacing: 0.05em;
 
     & > *, & > footer > * {
-        max-width: 95%;
-        width: 780px;
+        --max-width: 780px;
 
         margin-inline: auto;
 
         padding-block: var(--space-xs-s);
-        padding-inline: var(--space-s-l);
+        padding-inline: max(calc((100% - var(--max-width))/2), var(--space-m));
     }
 }
 
@@ -25,6 +29,7 @@ h1, h2, h3 {
     font-family:    var(--ff-heading);
     letter-spacing: -0.01em;
     line-height:    1.2;
+    font-weight: 500;
 }
 
 h1 {
@@ -60,7 +65,7 @@ h3 {
 
 footer {
     margin-block-start: var(--space-l-xl);
-    padding-block: var(--space-3xl);
+    padding-block: var(--space-xl);
 
     border-block-start: 2px solid var(--clr-high);
 

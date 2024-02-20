@@ -42,3 +42,7 @@ jobs:
           IMAGE_ID=ghcr.io/${{ github.repository }}/webserver:latest
           docker tag $(docker images --format "{{.Repository}}:{{.Tag}}" | head -n 1) $IMAGE_ID
           docker push $IMAGE_ID
+
+      - name: Trigger Render Deployment
+        run: |
+          curl -X POST ${{ secrets.RENDER_DEPLOY_HOOK }}

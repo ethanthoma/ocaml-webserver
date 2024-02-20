@@ -54,6 +54,8 @@
             width: 100%;
             position: relative;
 
+            font-size: var(--fs-200);
+
             & button {
                 width: inherit;
 

@@ -8,6 +8,11 @@ header {
     font-family: var(--ff-heading);
     font-size: var(--fs-400);
 
+    backdrop-filter: blur(12px);
+    background: color-mix(in srgb, var(--clr-base), transparent 80%);
+    position: sticky;
+    top: 0;
+
     & a {
         color: inherit;
     }
@@ -28,6 +33,9 @@ header {
 
             border-radius: var(--space-3xs);
 
+            transition-timing-function: var(--transition-timing-function);
+            transition-duration: var(--transition-duration);
+
             & a {
                 display: flex;
                 width: var(--space-l);
@@ -44,7 +52,6 @@ header {
 
         & li:hover, & li:focus {
             box-shadow: inset 0 0 0 2px var(--clr-foam);
-            background: var(--clr-surface);
 
             & .icon {
                 font-size: var(--fs-500);

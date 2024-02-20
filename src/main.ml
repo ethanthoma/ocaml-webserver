@@ -1,6 +1,5 @@
 open Opium
 open Easy_logging
-open Components
 
 let logger = Logging.make_logger "Route" Debug [Cli Debug]
 
@@ -18,21 +17,9 @@ let static =
 ;;
 
 let index_handler _ = 
-    Index.view 
+    Pages.Index.view 
     |> Response.of_html 
     |> Lwt.return
-;;
-
-let list_md_files =
-    Sys.readdir "./blogs" 
-    |> Array.to_list 
-    |> List.filter (fun file -> Filename.extension file = ".md")
-;;
-
-let query name =
-    let open Fuzzy_search in
-    Query.create name 
-    |> search ~items:list_md_files
 ;;
 
 let rec post_search_handler (request: Request.t) =
@@ -43,7 +30,7 @@ let rec post_search_handler (request: Request.t) =
         if filename = "" then
             []
         else
-            List.map Search.row @@ query filename
+            List.map Components.Search.row @@ Search.query filename
     in results 
     |> View.make 
     |> Lwt.return
@@ -51,24 +38,15 @@ and (let*) = Lwt.bind
 ;;
 
 let get_blog_handler (request: Request.t) =
-    let body =
-        let name = Router.param request "name" in
-        let blog_content = 
-            "<main>" ^ Blog.to_string name  ^ "</main>"
-        in
-        Index.view 
-        |> Format.asprintf "%a" (Tyxml.Html.pp ()) 
-        |> Str.replace_first (Str.regexp {|<main></main>|}) blog_content 
-        |> Body.of_string
-    in Response.make ~body () 
-    |> Response.set_content_type "text/html; charset=utf-8" 
-    |> Response.add_header ("Connection", "Keep-Alive") 
+    Router.param request "name"
+    |> Pages.Blog.view 
+    |> Response.of_html 
     |> Lwt.return
 ;;
 
 let get_blog_content_handler (request: Request.t) =
-    let name = Router.param request "name" in
-    Blog.to_response name 
+    Router.param request "name"
+    |> Blog.to_response
     |> Lwt.return
 ;;
 
