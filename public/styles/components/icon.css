@@ -1,6 +1,8 @@
 .icon {
     display: inline-block;
 
+    color: var(--clr-text);
+
     font-size: inherit;
 
     width: 1em;
@@ -11,7 +13,7 @@
     box-sizing: content-box !important;
 
     & .content {
-        color: var(--clr-text);
+        color: inherit;
 
         height: inherit;
         width: inherit;

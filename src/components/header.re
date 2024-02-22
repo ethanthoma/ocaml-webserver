@@ -21,6 +21,11 @@ let nav =
 
 let component =
     <header>
-        Search.component
+        <div id="left">
+            <a href="/">     
+                <Icon src="./public/svg/logo.svg" alt="logo"/>
+            </a>
+            Search.component
+        </div>
         nav
     </header>

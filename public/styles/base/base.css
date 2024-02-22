@@ -6,6 +6,8 @@ body {
     --transition-timing-function: cubic-bezier(.4,0,.2,1);
     --transition-duration: .15s;
 
+    overflow-x: hidden;
+
     max-width: 100dvw;
 
     background:     var(--clr-base);

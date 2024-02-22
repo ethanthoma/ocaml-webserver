@@ -1,5 +1,5 @@
 (library
   (name components)
-  (libraries opium tyxml)
+  (libraries str opium tyxml)
   (preprocess (pps tyxml-jsx))
 )

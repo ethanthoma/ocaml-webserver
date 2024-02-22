@@ -17,8 +17,8 @@ let static =
 ;;
 
 let index_handler _ = 
-    Pages.Index.view 
-    |> Response.of_html 
+    Pages.Index.view
+    |> Pages.Page.to_response
     |> Lwt.return
 ;;
 
@@ -26,13 +26,14 @@ let rec post_search_handler (request: Request.t) =
     let* filename = 
         request 
         |> Request.urlencoded_exn "search"
-    in let results =
-        if filename = "" then
-            []
-        else
-            List.map Components.Search.row @@ Search.query filename
-    in results 
-    |> View.make 
+    in let body =
+        filename
+        |> Search.query
+        |> List.map Components.Search.row
+        |> List.map Components.Component.to_string
+        |> String.concat "\n"
+        |> Body.of_string
+    in Response.make ~body ()
     |> Lwt.return
 and (let*) = Lwt.bind
 ;;
@@ -40,7 +41,7 @@ and (let*) = Lwt.bind
 let get_blog_handler (request: Request.t) =
     Router.param request "name"
     |> Pages.Blog.view 
-    |> Response.of_html 
+    |> Pages.Page.to_response
     |> Lwt.return
 ;;
 

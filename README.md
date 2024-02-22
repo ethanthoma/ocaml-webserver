@@ -4,17 +4,17 @@ This is a really simple blogging website made in Ocaml (and reasonml).
 
 ## Stack
 
-- ReasonML for JSX templating
-- Ocaml backend
-- Htmx
+- ReasonML  | templating
+- Ocaml     | backend
+- Turso     | database
+- Htmx      | frontend library
 
 ## TODO
 
-- Add meta-data for blogs
-- Probably a db for storing blogs
-- Better way to search all blogs
+- Use turso for blog storage and blog meta-data
+- Setup cloudfair for cdn and routing from domain name
 
-## Installation
+## Building + Running
 
 The nix flake has two build targets:
 1. dune project derivation: produces a binary that one can run as is

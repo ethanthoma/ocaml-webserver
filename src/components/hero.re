@@ -15,18 +15,7 @@ let component =
         </div>
       
         <div className="grid">
-            <div className="spacer one"> </div>
-            <div className="item two">
-                <a href="https://www.buymeacoffee.com/ethanthoma">
-                    <Icon src="./public/svg/bmc-icon.svg" alt="buy me a coffee"/>
-                    <p>
-                        "Buy me a coffee"
-                    </p>
-                </a>
-            </div>
-            <div className="spacer three"></div>
-            <div className="spacer four"></div>
-            <div className="item five">
+            <div id="blog-snippet" className="one">
                 // should fetch latest blog
                 <a href="/blogs/how_not_to_build_a_website.md">
                     <h2>"BLOG TITLE"</h2>
@@ -35,5 +24,16 @@ let component =
                     </p>
                 </a>
             </div>
+            <div className="spacer two"> </div>
+            <div className="spacer three"></div>
+            <div id="buy-me-coffee" className="four">
+                <a href="https://www.buymeacoffee.com/ethanthoma">
+                    <Icon src="./public/svg/bmc-icon.svg" alt="buy me a coffee"/>
+                    <p>
+                        "Buy me a coffee"
+                    </p>
+                </a>
+            </div>
+            <div className="spacer five"></div>
         </div>
     </div>

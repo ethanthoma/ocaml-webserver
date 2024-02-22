@@ -4,6 +4,7 @@ let createElement = (~children, ()) => {
     let title = Html.txt("Ethan Thoma")
 
     let htmx = <script src="/public/js/htmx.min.js"></script>
+    let hyperscript = <script src="/public/js/_hyperscript.min.js"></script>
 
     let style = <link rel="stylesheet" href="/public/styles/main.css"/>
 
@@ -16,6 +17,7 @@ let createElement = (~children, ()) => {
                 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
                 <title> title </title> 
                 htmx
+                hyperscript
                 style
                 favicon
                 <link rel="preconnect" href="https://fonts.googleapis.com"/>
