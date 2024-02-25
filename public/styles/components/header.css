@@ -53,8 +53,6 @@ header {
                 outline: var(--clr-foam) solid 2px;
 
                 & .icon .content {
-                    transition: scale 0.5s ease;
-
                     scale: 1.19;
                 }
             }
@@ -67,6 +65,7 @@ header {
             stroke: currentColor;
 
             & .content {
+                transition: scale 0.5s ease;
                 scale: 1.7;
             }
         }

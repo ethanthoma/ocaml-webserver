@@ -8,8 +8,7 @@ image:
     alt: ''
 tags: [ "webdev" ]
 ---
-# How not to Build a Website
-
+# How Not to Build a Website
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Suspendisse interdum consectetur libero id faucibus nisl tincidunt. Ac tortor vitae purus faucibus ornare suspendisse. Donec pretium vulputate sapien nec sagittis aliquam malesuada. Nibh ipsum consequat nisl vel pretium lectus quam. Eget arcu dictum varius duis at consectetur lorem donec. In vitae turpis massa sed elementum tempus. Risus commodo viverra maecenas accumsan lacus vel facilisis volutpat est. Erat pellentesque adipiscing commodo elit at imperdiet dui accumsan. Egestas fringilla phasellus faucibus scelerisque eleifend donec pretium vulputate sapien. Enim sed faucibus turpis in eu mi. Dictum at tempor commodo ullamcorper a lacus vestibulum sed. Viverra adipiscing at in tellus integer feugiat. Viverra nam libero justo laoreet sit. Lectus arcu bibendum at varius vel pharetra. Tristique magna sit amet purus gravida quis blandit turpis cursus.
 

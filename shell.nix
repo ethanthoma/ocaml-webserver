@@ -1,5 +1,5 @@
 let
-    nixpkgs = fetchTarball "https://github.com/NixOS/nixpkgs/tarball/nixos-23.11";
+    nixpkgs = fetchTarball "https://github.com/NixOS/nixpkgs/tarball/nixpkgs-unstable";
     pkgs = import nixpkgs { config = {}; overlays = []; };
 in pkgs.mkShell {
     buildInputs = with pkgs; [
@@ -12,9 +12,12 @@ in pkgs.mkShell {
         ocamlPackages.utop
         opam
         reason
+        turso-cli
+        pkg-config
+        openssl
     ];
 
     shellHook = ''
-        eval $(opam env)    
+        eval $(opam env --switch=webserver)
     '';
 }

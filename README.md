@@ -12,7 +12,7 @@ This is a really simple blogging website made in Ocaml (and reasonml).
 ## TODO
 
 - Use turso for blog storage and blog meta-data
-- Setup cloudfair for cdn and routing from domain name
+- Setup cloudflare for cdn and routing from domain name
 
 ## Building + Running
 

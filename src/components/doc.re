@@ -27,9 +27,7 @@ let createElement = (~children, ()) => {
             <body>
                 Header.component
                 <main>...children</main>
-                <footer>
-                    "© 2024 Ethan Thoma and/or his affiliates. All rights reserved."
-                </footer>
+                Footer.component
             </body>
         </html>;
 

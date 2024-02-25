@@ -1,0 +1,27 @@
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-block-start: var(--space-l-xl);
+    padding-block: var(--space-xl);
+
+    border-block-start: 2px solid var(--clr-high);
+
+    font-size: var(--fs-100);
+    text-align: center;
+
+    & > * + * {
+        margin-block-start: var(--space-s);
+    }
+
+    & a {
+        color: var(--clr-gold);
+
+        &:hover, &:focus, &:focus-visible {
+            color: var(--clr-rose);
+            transition-timing-function: var(--transition-timing-function);
+            transition-duration: var(--transition-duration);
+        }
+    } 
+}

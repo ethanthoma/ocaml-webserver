@@ -56,7 +56,7 @@
 .hero .grid {
     display: grid;
 
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 1;
 
     grid-gap: var(--space-xs);
 
@@ -69,35 +69,20 @@
         text-align: center;
     }
 
-    & #buy-me-coffee, & #blog-snippet {
-        background-position: center;
-        background-size: cover;
+    & a {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
 
-        & > a {
-            display: flex;
-            flex-direction: column;
-            height: 100%;
+        border-radius: inherit;
 
-            border-radius: inherit;
+        padding-inline: var(--space-3xs);
 
-            padding-inline: var(--space-3xs);
+        justify-content: center;
+        align-items: center;
 
-            justify-content: center;
-            align-items: center;
-
-            text-decoration: none;
-            color: var(--clr-text);
-
-            &:hover, &:focus, &:focus-visible {
-                outline: unset;
-
-                transition-timing-function: var(--transition-timing-function);
-                transition-duration: var(--transition-duration);
-
-                background-color: var(--clr-muted);
-                box-shadow: inset 0 0 0 2px var(--clr-foam);
-            }
-        }
+        text-decoration: none;
+        color: var(--clr-text);
 
         & h2 {
             font-size: var(--fs-300);
@@ -109,6 +94,15 @@
             font-size: var(--fs-200);
         }
 
+        &:hover, &:focus, &:focus-visible {
+            outline: unset;
+
+            transition-timing-function: var(--transition-timing-function);
+            transition-duration: var(--transition-duration);
+
+            background-color: var(--clr-muted);
+            box-shadow: inset 0 0 0 2px var(--clr-foam);
+        }
     }
 
     & .one {
@@ -122,7 +116,11 @@
         grid-column: 3 / 5;
         grid-row: 1 / 2;
 
-        background-color: var(--clr-iris);
+        background: linear-gradient(
+            to bottom right,
+            var(--clr-iris),
+            var(--clr-love)
+        );
     }
 
     & .three {
@@ -131,7 +129,11 @@
         grid-column: 1 / 2;
         grid-row: 3 / 4;
 
-        background-color: var(--clr-pine);
+        background: linear-gradient(
+            to bottom right,
+            var(--clr-foam),
+            var(--clr-pine)
+        );
     }
 
     & .four {
@@ -145,11 +147,11 @@
         grid-column: 3 / 5;
         grid-row: 2 / 4;
 
-        background-color: var(--clr-rose);
-    }
-
-    & #blog-snippet {
-
+        background: linear-gradient(
+            to bottom right,
+            var(--clr-rose),
+            var(--clr-gold)
+        );
     }
 
     & #buy-me-coffee {

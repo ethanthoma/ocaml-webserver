@@ -1,3 +1,5 @@
 .direnv/
 _build/
 result
+.env
+turso.ml

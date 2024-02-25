@@ -8,7 +8,8 @@ let bar =
             autocomplete="off"
             name="search" 
             placeholder="Search for blogs..." 
-            _hx_post="/search" 
+            _hx_get="/search" 
+            _hx_include="this"
             _hx_trigger="focus, input changed delay:50ms, search" 
             _hx_target="#search-results-content"
             _hs="
@@ -48,6 +49,7 @@ let row = (filename: string) =>
             _hx_get={"/blogs/content/" ++ filename} 
             _hx_target="main"
             _hx_push_url={"/blogs/" ++ filename}
+            _hs="on click trigger closeSearch on #search-results"
         >
             {Html.txt(filename)}
         </button>

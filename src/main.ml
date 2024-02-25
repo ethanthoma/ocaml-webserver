@@ -10,50 +10,41 @@ let log =
     in Rock.Middleware.create ~filter ~name:"Logger"
 ;;
 
+let get_healthy_handler (_: Request.t) =
+    Response.make ()
+    |> Response.set_status (`OK)
+    |> Lwt.return
+;;
+
 let static =
     Middleware.static_unix 
         ~local_path:"./public/" 
         ~uri_prefix:"/public/" ()
 ;;
 
-let index_handler _ = 
+let index_handler (_: Request.t) = 
     Pages.Index.view
-    |> Pages.Page.to_response
+    |> Pages.View.to_response
     |> Lwt.return
-;;
-
-let rec post_search_handler (request: Request.t) =
-    let* filename = 
-        request 
-        |> Request.urlencoded_exn "search"
-    in let body =
-        filename
-        |> Search.query
-        |> List.map Components.Search.row
-        |> List.map Components.Component.to_string
-        |> String.concat "\n"
-        |> Body.of_string
-    in Response.make ~body ()
-    |> Lwt.return
-and (let*) = Lwt.bind
 ;;
 
 let get_blog_handler (request: Request.t) =
     Router.param request "name"
     |> Pages.Blog.view 
-    |> Pages.Page.to_response
+    |> Pages.View.to_response
     |> Lwt.return
 ;;
 
 let get_blog_content_handler (request: Request.t) =
     Router.param request "name"
-    |> Blog.to_response
+    |> Components.Blog.component
+    |> Components.View.to_response
     |> Lwt.return
 ;;
 
-let get_healthy_handler _ =
-    Response.make ()
-    |> Response.set_status (`OK)
+let get_hero_content_handler (_: Request.t) =
+    Components.Hero.component
+    |> Components.View.to_response
     |> Lwt.return
 ;;
 
@@ -64,8 +55,9 @@ let _ =
     |> middleware static 
     |> get "/healthy" get_healthy_handler
     |> get "/" index_handler 
-    |> post "/search" post_search_handler 
+    |> get "/search" Search.get_search_handler 
     |> get "/blogs/:name" get_blog_handler 
     |> get "/blogs/content/:name" get_blog_content_handler 
+    |> get "/hero/content" get_hero_content_handler 
     |> run_command
 ;; 

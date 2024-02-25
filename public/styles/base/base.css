@@ -17,7 +17,7 @@ body {
     line-height:    1.5;
     letter-spacing: 0.05em;
 
-    & > *, & > footer > * {
+    & > * {
         --max-width: 780px;
 
         margin-inline: auto;
@@ -63,57 +63,6 @@ h3 {
 .bold, strong {
     font-weight:    600;
     font-style:     normal;
-}
-
-footer {
-    margin-block-start: var(--space-l-xl);
-    padding-block: var(--space-xl);
-
-    border-block-start: 2px solid var(--clr-high);
-
-    font-size: var(--fs-100);
-    text-align: center;
-}
-
-article {
-    background: var(--clr-surface);
-
-    border-radius:  var(--space-3xs-2xs);
-
-    padding-block: var(--space-m-l);
-    padding-inline: var(--space-m-l);
-
-    /* margin spacing */
-    & > * + * {
-        --_margin-top:  var(--space-xs-s);
-
-        margin-top:     var(--_margin-top);
-    }
-
-    & > * + button {
-        --_margin-top:  var(--space-l-xl);
-    }
-
-    & > * + h1,
-    & > * + h2,
-    & > * + h3 {
-        --_margin-top:  var(--space-m-l);
-    }
-
-    & ul {
-        list-style-position: inside;
-    }
-
-    & pre {
-        padding: var(--space-xs);
-        background: var(--clr-overlay);
-        font-size: var(--fs-200);
-        overflow-x: auto;
-
-        & > code {
-            word-wrap: break-word;
-        }
-    }
 }
 
 ::-webkit-scrollbar {

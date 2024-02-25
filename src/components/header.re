@@ -22,7 +22,12 @@ let nav =
 let component =
     <header>
         <div id="left">
-            <a href="/">     
+            <a 
+                href=""
+                _hx_get="/hero/content" 
+                _hx_target="main"
+                _hx_replace_url="/"
+            >     
                 <Icon src="./public/svg/logo.svg" alt="logo"/>
             </a>
             Search.component
