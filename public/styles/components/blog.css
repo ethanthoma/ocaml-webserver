@@ -8,23 +8,54 @@ article {
 
     /* margin spacing */
     & > * + * {
-        --_margin-top:  var(--space-xs-s);
-
-        margin-top:     var(--_margin-top);
+        margin-block-start: var(--space-m-l);
     }
 
     & > button {
-        --_margin-top:  var(--space-l-xl);
+        margin-block-start: var(--space-l-xl);
     }
 
-    & h1,
-    & h2,
-    & h3 {
-        --_margin-top:  var(--space-m-l);
+    & h1 {
+        margin-block-start: var(--space-s-m);
+        text-align: center;
     }
 
-    & ul {
+    & h1:after {
+        --_width: 60;
+        --_transx: calc((100 / (2 * var(--_width))) - 0.5);
+
+        width: calc(var(--_width) * 1%);
+        transform: translateX(calc(var(--_transx) * 100%));
+
+
+        content: ' ';
+        margin-block-start: var(--space-m-l);
+        display: block;
+        border: 1px solid var(--clr-text);
+
+        
+        border-radius: var(--space-3xs);
+    }
+
+    & h2, & h3 {
+        margin-block-start: var(--space-l-xl);
+    }
+
+    & ul, & ol {
         list-style-position: inside;
+
+        & > li {
+            margin-inline-start: var(--space-m);
+        }
+
+        & > * + li {
+            margin-block-start: var(--space-2xs);
+        }
+    }
+
+    & p > code {
+        color: var(--clr-foam);
+        font-style: italic;
     }
 
     & pre {

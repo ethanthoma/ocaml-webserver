@@ -28,7 +28,7 @@ let get_hero_content_handler _ =
 ;;
 
 let () = 
-    run ~port:3000
+    run ~interface:"0.0.0.0" ~port:3000
     @@ logger
     @@ router [
         get "/public/**" @@ static "./public";

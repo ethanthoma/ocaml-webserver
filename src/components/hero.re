@@ -17,10 +17,10 @@ let component =
         <div className="grid">
             <div id="blog-snippet" className="one">
                 // should fetch latest blog
-                <a href="/blogs/how_not_to_build_a_website_part_one.md">
-                    <h2>"How Not to Build a Website Part One"</h2>
+                <a href="/blogs/how_not_to_build_a_website.md">
+                    <h2>"How not to Build a Website: Part One"</h2>
                     <p>
-                        "BLOG DESCRIPTION"
+                        "How complicated can you make a static site?"
                     </p>
                 </a>
             </div>
