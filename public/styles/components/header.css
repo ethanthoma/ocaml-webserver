@@ -15,6 +15,7 @@ header {
     background: color-mix(in srgb, var(--clr-base), transparent 80%);
     position: sticky;
     top: 0;
+    z-index: 1;
 
     & a {
         color: inherit;
@@ -97,9 +98,6 @@ header {
                 border-radius: var(--space-3xs);
 
                 &:hover, &:focus, &:focus-visible {
-                    outline-offset: 2px;
-                    outline: var(--clr-foam) solid 2px;
-
                     & .icon {
                         scale: 0.7;
                     }

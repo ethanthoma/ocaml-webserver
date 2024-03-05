@@ -1,5 +1,5 @@
 (library
   (name pages)
-  (libraries components opium str tyxml omd)
+  (libraries components dream str tyxml omd)
   (preprocess (pps tyxml-jsx))
 )

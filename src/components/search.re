@@ -3,7 +3,7 @@ open Tyxml;
 let bar =
     <div id="search-bar">
         <input 
-            className="form-control" 
+            className="form-control outline" 
             type_="search"
             autocomplete="off"
             name="search" 
@@ -46,6 +46,7 @@ let component =
 let row = (filename: string) =>
     <li>
         <button 
+            className="animate border"
             _hx_get={"/blogs/content/" ++ filename} 
             _hx_target="main"
             _hx_push_url={"/blogs/" ++ filename}

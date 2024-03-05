@@ -2,4 +2,3 @@
 _build/
 result
 .env
-turso.ml

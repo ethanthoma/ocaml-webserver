@@ -1,8 +1,8 @@
 {
     inputs = {
+        nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
         opam-nix.url = "github:tweag/opam-nix";
         flake-utils.url = "github:numtide/flake-utils";
-        nixpkgs.follows = "opam-nix/nixpkgs";
     };
 
     outputs = { self, flake-utils, opam-nix, nixpkgs }:
@@ -17,10 +17,9 @@
 
             scope = on.buildDuneProject { } package src { 
                 ocaml-base-compiler = "*"; 
-                opium = "*";
+                dream = "*";
                 reason = "*";
                 tyxml-jsx = "*";
-                easy_logging = "*";
                 fuzzy_match = "*";
                 omd = "*";
             };
@@ -28,10 +27,9 @@
             overlay = final: prev: {
                 ${package} = prev.${package}.overrideAttrs (oa: {
                     buildInputs = oa.buildInputs ++ [ 
-                        final.opium 
+                        final.dream 
                         final.reason
                         final.tyxml-jsx
-                        final.easy_logging
                         final.fuzzy_match
                         final.omd
                     ];
@@ -45,37 +43,19 @@
 
             legacyPackages = scope.overrideScope' overlay;
 
-            default = self.legacyPackages.${system}.${package};
-
-            image = pkgs.dockerTools.buildImage {
-                name = "webserver";
-                tag = "latest";
-                created = "now";
-                copyToRoot = pkgs.buildEnv {
-                    name = "webserver";
-                    paths = [
-                        default
-                        pkgs.bash
-                        pkgs.getconf
-                    ];
-                    pathsToLink = [ "/bin" "/public" "/blogs" ];
-                };
-                config = {
-                    Cmd = [ 
-                        "${default}/bin/${package}"
-                    ];
-                    ExposedPorts = {
-                        "3000/tcp" = {};
-                    };
-                };
-            };
+            derivation = self.legacyPackages.${system}.${package};
         in {
             inherit legacyPackages;
-            packages = {
-                inherit default;
-                docker = image;
+
+            packages.default = derivation;
+
+            packages.docker = pkgs.callPackage ./nix/docker.nix {
+                inherit pkgs package derivation;
             };
-            defaultPackage = default;
+
+            devShells.default = pkgs.callPackage ./nix/shell.nix {
+                inherit pkgs;
+            };
         }
     );
 }

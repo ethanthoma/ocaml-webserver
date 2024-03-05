@@ -3,17 +3,17 @@ open Tyxml;
 let nav =
     <ul id="nav">
         <li>
-            <a href="https://github.com/ethanthoma">
+            <a href="https://github.com/ethanthoma" className="animate outline">
                 <Icon src="./public/svg/logo-github.svg" alt="github"/>
             </a>
         </li>
         <li>
-            <a href="https://twitter.com/EthanBThoma">
+            <a href="https://twitter.com/EthanBThoma" className="animate outline">
                 <Icon src="./public/svg/logo-twitter.svg" alt="twitter"/>
             </a>
         </li>
         <li>
-            <a href="mailto:ethanthoma@gmail.com">
+            <a href="mailto:ethanthoma@gmail.com" className="animate outline">
                 <Icon src="./public/svg/mail.svg" alt="email"/>
             </a>
         </li>
@@ -23,6 +23,7 @@ let component =
     <header>
         <div id="left">
             <a 
+                className="animate outline"
                 href=""
                 _hx_get="/hero/content" 
                 _hx_target="main"

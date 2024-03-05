@@ -6,18 +6,18 @@ maintainer: ["Ethan Thoma"]
 authors: ["Ethan Thoma"]
 license: "LICENSE"
 tags: ["topics" "Htmx" "JSX" "Ocaml"]
-homepage: "https://github.com/username/reponame"
-doc: "https://url/to/documentation"
-bug-reports: "https://github.com/username/reponame/issues"
+homepage: "https://github.com/ethanthoma/ocaml-webserver"
+bug-reports: "https://github.com/ethanthoma/ocaml-webserver/issues"
 depends: [
   "ocaml"
   "dune" {>= "3.7"}
-  "opium"
+  "dream"
   "reason"
   "tyxml-jsx"
-  "easy_logging"
+  "piaf"
   "fuzzy_match"
   "omd"
+  "ppx_string"
   "odoc" {with-doc}
 ]
 build: [
@@ -34,4 +34,4 @@ build: [
     "@doc" {with-doc}
   ]
 ]
-dev-repo: "git+https://github.com/username/reponame.git"
+dev-repo: "git+https://github.com/ethanthoma/ocaml-webserver.git"

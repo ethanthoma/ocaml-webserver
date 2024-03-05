@@ -14,7 +14,7 @@ body {
     color:          var(--clr-text);
     font-family:    var(--ff-body);
     font-size:      var(--fs-300);
-    line-height:    1.5;
+    line-height:    1.6;
     letter-spacing: 0.05em;
 
     & > * {
@@ -23,7 +23,7 @@ body {
         margin-inline: auto;
 
         padding-block: var(--space-xs-s);
-        padding-inline: max(calc((100% - var(--max-width))/2), var(--space-m));
+        padding-inline: max(calc((100% - var(--max-width))/2), var(--space-xs-m));
     }
 }
 
@@ -31,38 +31,33 @@ h1, h2, h3 {
     font-family:    var(--ff-heading);
     letter-spacing: -0.01em;
     line-height:    1.2;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 h1 {
-    font-size: var(--fs-600);
+    font-size: var(--fs-800);
 }
 
 h2 {
-    font-size: var(--fs-500);
+    font-size: var(--fs-600);
 }
 
 h3 {
     font-size: var(--fs-400);
 }
+    
+a {
+    color: var(--clr-gold);
+    border-radius: var(--space-3xs);
 
-.hidden {
-    clip:           rect(0 0 0 0);
-    clip-path:      inset(50%);
-    height:         0px;
-    overflow:       hidden;
-    position:       absolute;
-    white-space:    nowrap;
-    width:          0px;
-}
+    &:hover, &:focus, &:focus-visible {
+        color: var(--clr-rose);
+    }
 
-.italic {
-    font-style: italic;
-}
-
-.bold, strong {
-    font-weight:    600;
-    font-style:     normal;
+    &:focus-visible {
+        outline-offset: 2px;
+        outline: var(--clr-foam) solid 2px;
+    }
 }
 
 ::-webkit-scrollbar {

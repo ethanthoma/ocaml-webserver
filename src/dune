@@ -1,6 +1,6 @@
 (executable
   (public_name webserver)
   (name main)
-  (libraries components pages opium tyxml easy_logging fuzzy_match.search omd str)
-  (preprocess (pps tyxml-jsx))
+  (libraries components pages dream tyxml fuzzy_match.search omd str)
+  (preprocess (pps tyxml-jsx ppx_string lwt_ppx))
 )

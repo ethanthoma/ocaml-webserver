@@ -4,7 +4,7 @@ article {
     border-radius:  var(--space-3xs-2xs);
 
     padding-block: var(--space-m-l);
-    padding-inline: var(--space-m-l);
+    padding-inline: var(--space-xs-xl);
 
     /* margin spacing */
     & > * + * {
@@ -13,13 +13,13 @@ article {
         margin-top:     var(--_margin-top);
     }
 
-    & > * + button {
+    & > button {
         --_margin-top:  var(--space-l-xl);
     }
 
-    & > * + h1,
-    & > * + h2,
-    & > * + h3 {
+    & h1,
+    & h2,
+    & h3 {
         --_margin-top:  var(--space-m-l);
     }
 
