@@ -22,7 +22,6 @@
     dream
     reason
     tyxml-jsx
-    piaf
     fuzzy_match
     omd
     ppx_string
