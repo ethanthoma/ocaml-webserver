@@ -38,5 +38,9 @@ let () =
         get "/blogs/:name" get_blog_handler;
         get "/blogs/content/:name" get_blog_content_handler;
         get "/hero/content" get_hero_content_handler;
+        get "/turso" (fun _ ->
+            let json = Turso.query_blogs () in
+            Dream.json json
+        )
     ]
 ;; 

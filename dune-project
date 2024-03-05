@@ -1,5 +1,7 @@
 (lang dune 3.7)
 
+(using ctypes 0.3)
+
 (name webserver)
 
 (generate_opam_files true)
@@ -26,6 +28,8 @@
     fuzzy_match
     omd
     ppx_string
+    ctypes
+    ctypes-foreign
   )
   (tags (topics "Htmx" "JSX" "Ocaml"))
  )

@@ -1,0 +1,14 @@
+(library
+  (name turso)
+  (libraries ctypes ctypes.foreign)
+  (foreign_archives turso))
+
+(rule
+  (deps (source_tree .))
+  (targets libturso.a dllturso.so)
+  (action
+    (no-infer
+      (progn 
+        (run go build -o dllturso.so -buildmode=c-shared .)
+        (run go build -o libturso.a -buildmode=c-archive .))
+      )))
