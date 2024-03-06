@@ -112,19 +112,19 @@ to build and run the site as a Docker image using nginx to serve the files.
 
 ### This Has to Be Better Than Bash
 
-This was getting complicated. Obviously. I had three custom Bash scripts doing 
+This was getting complicated, obviously. I had three custom Bash scripts doing 
 way too much. Around this time I was switching away from Windows and JetBrains 
 IDEs and diving head first into the Linux and Neovim world. I had a new 
-philosophy: use the right tool/language for the right job. Now, I can write a 
-whole blog post on this alone, but I digress. Instead, I will just say that 
-there is also the philosophy of keeping it simple. This important because this 
-is where I went further down the rabbit whole: a build system.
+philosophy now: use the right tool/language for the right job. On this alone, I 
+can write a whole blog post, but instead, I will just say that there is also the 
+key idea of keeping things simple. This I found out out the hard way as I went 
+further down the rabbit hole: a build system.
 
 As I was getting used to the [Nixos](https://nixos.org/) lifestyle, I watched a 
 short presentation on using [Bazel](https://bazel.build/) and Nix flakes. 
 Adopting Bazel was not an easy task. I spent about a month learning and 
 configuring Bazel. It was complex. But, eventually I got it to re-produce the 
-same building as my Bash script did. My thoughts on Bazel? You probably don't 
+what my Bash scripts did. My thoughts on Bazel? You probably don't 
 need it. It's clunky and complex. And, as I was already in the Nix flakes world, 
 there were probably much, much easier ways for me to get reproducable and 
 [hermetic builds](https://bazel.build/basics/hermeticity) than Bazel.
@@ -139,8 +139,8 @@ there was no plan.
 
 I didn't know **how** to make a website. I still don't _really_ know. I was 
 caught in the middle of not knowing if I wanted to [make or learn something](/blogs/to_learn_or_to_do.md).
-Because I had no plan, I went nowhere. It's like running a race without knowing 
-the direction. So what did I do then? Scraped it. Sometimes you realize you 
+Because I had no plan, so I went nowhere. It's like running a race without knowing 
+the direction. So what did I do then? I scraped it. Sometimes you realize you 
 went down the wrong path. It comes down to restarting or fixing it and I think
 people get too bogged down in the sunk cost that you want to waste way more time
 trying to fix it compared to restarting. Not to say you should always restart 
@@ -148,7 +148,11 @@ either. Some devs _always_ try to restart. A new stack or a new language will
 surely make it better, right? There's no golden rule for this. Sometimes, a 
 little bit of space and a bit of time and you'll figure it out on your own.
 
+All in all, use the write tool, keep it simple, and, whatever you do, don't make
+a custom Bash CLI for a static site.
+
 ### This Website
 
-This post is getting too long now. Next time, I will go over how I made _THIS_ 
-website and see if I learnt my lesson. [Click here](/blogs/how_to_build_a_website.md).
+This is a looooong blog. Long for me since it's my first. In the second part, 
+I will go over how I made _THIS_ website and the stupid decisions I made along 
+the way. [Click here](/blogs/how_to_build_a_website.md) to read about it.
