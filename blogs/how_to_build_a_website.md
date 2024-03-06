@@ -4,8 +4,10 @@ To read about the first part, [click here](/blogs/how_not_to_build_a_website.md)
 
 ## The Dare
 
-### I like Opium
+### I Like Opium
 
-### Now _this_ is how you make a blog
+### Now _This_ is How You Make a Blog
 
-### The HOT stack: HTMX Ocaml Turso
+### The HOT Stack: HTMX Ocaml Turso
+
+### When You Knew You Went to far

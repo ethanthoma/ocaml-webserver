@@ -9,7 +9,7 @@ let to_string = (filename) => {
             |>Omd.to_html
     ;
 
-    "<article>" ++ blog_content ++ "</article>";
+    "<article class=\"blog-content\">" ++ blog_content ++ "</article>";
 }
 
 let view = (filename) =>

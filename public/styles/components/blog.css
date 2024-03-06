@@ -1,4 +1,4 @@
-article {
+.blog-content {
     background: var(--clr-surface);
 
     border-radius:  var(--space-3xs-2xs);
