@@ -1,5 +1,5 @@
 (library
   (name components)
-  (libraries str dream tyxml omd)
+  (libraries turso str dream tyxml omd)
   (preprocess (pps tyxml-jsx))
 )

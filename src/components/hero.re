@@ -1,6 +1,6 @@
 open Tyxml;
 
-let component = (blog: Blog_cards.blog_metadata) => 
+let component = (blog: Turso.blog) => 
     <div className="hero">
         <div className="text">
             <p className="subtitle fancy">"computer science graduate student"</p>

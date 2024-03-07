@@ -2,7 +2,7 @@
   (name turso)
   (public_name webserver.turso)
   (foreign_archives go_turso)
-  (libraries ctypes ctypes.foreign)
+  (libraries ctypes ctypes.foreign yojson)
   (flags (:standard -w -49))
   
  (wrapped false)

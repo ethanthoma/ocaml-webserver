@@ -1,15 +1,18 @@
 open Tyxml;
 
-let component = (filename) => {
-    let filename = "./blogs/" ++ filename;
+let component = (blog: Turso.blog) => {
+    print_endline(blog.content);
+    let filename = "./blogs/" ++ blog.filename;
 
     let file_data =
         In_channel.input_all
         |> In_channel.with_open_bin(filename)
     ;
 
+    print_endline(file_data);
+
     let blog_content = 
-        file_data
+        blog.content
         |> Omd.of_string 
         |> Omd.to_html
     ;

@@ -68,6 +68,9 @@
                 & button {
                     width: inherit;
                     height: var(--height);
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    white-space: nowrap;
 
                     padding-block: var(--space-3xs);
                     padding-inline: var(--space-xs);

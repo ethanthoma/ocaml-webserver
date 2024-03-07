@@ -1,13 +1,25 @@
-let list_md_files =
-    Sys.readdir "./blogs" 
-    |> Array.to_list 
-    |> List.filter (fun file -> Filename.extension file = ".md")
+open Turso
+
+let blogs = get_blogs ()
+
+let search query ~items =
+    let open! Core in
+    let open Fuzzy_search in
+    let compare_blog a b = 
+        compare_string a.title b.title
+    in
+    List.filter_map items ~f:(fun item ->
+        let title = item.title in
+        match score query ~item:title with
+        | 0 -> None
+        | score -> Some (score, String.length title, item))
+    |> List.sort ~compare:[%compare: int * int * blog]
+    |> List.map ~f:Tuple3.get3
 ;;
 
 let query name =
-    let open Fuzzy_search in
-    Query.create name 
-    |> search ~items:list_md_files
+    Fuzzy_search.Query.create name 
+    |> search ~items:blogs
 ;;
 
 let content request =

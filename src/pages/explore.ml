@@ -4,17 +4,7 @@ let list_md_files =
     |> List.filter (fun file -> Filename.extension file = ".md")
 ;;
 
-let blogs = 
-    list_md_files 
-    |> List.map (fun filename -> 
-        let blogs: Components.Blog_cards.blog_metadata = {
-            filename = filename;
-            title = "blog title";
-            description = "descrip";
-            tags = ["tag1"; "tag2"];
-        } in blogs
-    )
-;;
+let blogs = Turso.get_blogs () 
 
 let content _ =
     blogs

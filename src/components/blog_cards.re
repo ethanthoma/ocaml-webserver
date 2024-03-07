@@ -1,13 +1,6 @@
 open Tyxml;
 
-type blog_metadata = {
-    filename:       string,
-    title :         string,
-    description :   string,
-    tags :          list(string),
-}
-
-let blog_card = (blog) => 
+let blog_card = (blog: Turso.blog) => 
     <article className="blog-card">
         <a 
             className="animate border"

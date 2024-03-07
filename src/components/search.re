@@ -43,15 +43,15 @@ let component =
         results
     </div>
 
-let row = (filename: string) =>
+let row = (blog: Turso.blog) =>
     <li>
         <button 
             className="animate border"
-            _hx_get={"/blogs/" ++ filename ++ "/content"} 
+            _hx_get={"/blogs/" ++ blog.filename ++ "/content"} 
             _hx_target="main"
-            _hx_push_url={"/blogs/" ++ filename}
+            _hx_push_url={"/blogs/" ++ blog.filename}
             _hs="on click trigger closeSearch on #search-results"
         >
-            {Html.txt(filename)}
+            {Html.txt(blog.title)}
         </button>
     </li>

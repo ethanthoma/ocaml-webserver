@@ -16,12 +16,7 @@ let () =
         get "/search"               Search.content;
         get "/explore"              Pages.Explore.view;
         get "/explore/content"      Pages.Explore.content;
-        get "/blogs/:name"          Pages.Blog.view;
-        get "/blogs/:name/content"  Pages.Blog.content;
-        get "/turso"                (fun _ ->
-            let json = Turso.query_blogs () in
-            print_endline json;
-            Dream.json json
-        )
+        get "/blogs/:slug"          Pages.Blog.view;
+        get "/blogs/:slug/content"  Pages.Blog.content;
     ]
 ;; 
