@@ -3,4 +3,5 @@
   (name main)
   (libraries components pages turso dream tyxml fuzzy_match.search omd str)
   (preprocess (pps tyxml-jsx ppx_string lwt_ppx))
+  (link_flags -cclib -Wl,--whole-archive -cclib ./lib/turso/libgo_turso.a -cclib -Wl,--no-whole-archive)
 )

@@ -1,14 +1,20 @@
 (library
   (name turso)
+  (public_name webserver.turso)
+  (foreign_archives go_turso)
   (libraries ctypes ctypes.foreign)
-  (foreign_archives turso))
+  (flags (:standard -w -49))
+  
+ (wrapped false)
+  (library_flags (-cclib -lgo_turso)))
 
 (rule
   (deps (source_tree .))
-  (targets libturso.a dllturso.so)
-  (action
-    (no-infer
-      (progn 
-        (run go build -o dllturso.so -buildmode=c-shared .)
-        (run go build -o libturso.a -buildmode=c-archive .))
-      )))
+  (targets libgo_turso.a dllgo_turso.so libgo_turso.h)
+  (action 
+    (no-infer 
+      (ignore-stdout 
+        (progn 
+            (run make))))))
+
+(env (utop (env-vars (OCAML_INTEROP_NO_CAML_STARTUP true))))

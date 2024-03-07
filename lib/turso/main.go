@@ -9,22 +9,27 @@ import (
     "encoding/json"
 	"fmt"
     "os"
+    "time"
+
     _ "github.com/tursodatabase/libsql-client-go/libsql"
 )
+
+var database = os.Getenv("TURSO_DATABASE")
+var token = os.Getenv("TURSO_DATABASE_TOKEN")
 
 var db *sql.DB
 
 type Blog struct {
-    ID      int
-    Content sql.NullString
-    Title   sql.NullString
-    Release sql.NullString
+    ID          int
+    Title       string
+    Slug        string
+    Description string
+    Content     string
+    Date        time.Time
 }
 
 //export Init
 func Init() {
-    database := os.Getenv("TURSO_DATABASE")
-    token := os.Getenv("TURSO_TOKEN")
     url := fmt.Sprint("libsql://", database, ".turso.io?authToken=", token)
 
     var err error
@@ -49,7 +54,14 @@ func QueryBlogs() *C.char {
     for rows.Next() {
         var blog Blog
 
-        if err := rows.Scan(&blog.ID, &blog.Content, &blog.Title, &blog.Release); err != nil {
+        if err := rows.Scan(
+            &blog.ID, 
+            &blog.Title, 
+            &blog.Slug,
+            &blog.Description,
+            &blog.Content, 
+            &blog.Date,
+            ); err != nil {
             fmt.Println("Error scanning row:", err)
             return C.CString("")
         }
@@ -58,14 +70,16 @@ func QueryBlogs() *C.char {
     }
 
     if err := rows.Err(); err != nil {
-        fmt.Println("Error during rows iteration:", err)
-        return C.CString("")
+        str := fmt.Sprint("Error during rows iteration:", err)
+        fmt.Println(str)
+        return C.CString(str)
     }
 
     jsonBlogs, err := json.Marshal(blogs)
     if err != nil {
-        fmt.Println("Error marshaling blogs:", err)
-        return C.CString("")
+        str := fmt.Sprint("Error marshaling blogs:", err)
+        fmt.Println(str)
+        return C.CString(str)
     }
 
     return C.CString(string(jsonBlogs))

@@ -10,7 +10,7 @@ let query name =
     |> search ~items:list_md_files
 ;;
 
-let get_search_handler request =
+let content request =
     let search_value =
         match Dream.query request "search" with
         | Some value -> value
