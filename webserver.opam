@@ -17,6 +17,8 @@ depends: [
   "fuzzy_match"
   "omd"
   "ppx_string"
+  "ctypes"
+  "ctypes-foreign"
   "odoc" {with-doc}
 ]
 build: [

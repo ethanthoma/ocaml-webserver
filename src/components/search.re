@@ -47,7 +47,7 @@ let row = (filename: string) =>
     <li>
         <button 
             className="animate border"
-            _hx_get={"/blogs/content/" ++ filename} 
+            _hx_get={"/blogs/" ++ filename ++ "/content"} 
             _hx_target="main"
             _hx_push_url={"/blogs/" ++ filename}
             _hs="on click trigger closeSearch on #search-results"

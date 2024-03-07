@@ -14,6 +14,6 @@ let component = (filename) => {
         |> Omd.to_html
     ;
 
-    "<article>" ++ blog_content ++ "</article>"
+    "<article class=\"blog-content\">" ++ blog_content ++ "</article>"
     |> Html.Unsafe.data;
 }

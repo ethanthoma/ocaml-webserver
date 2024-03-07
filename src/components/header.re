@@ -25,7 +25,7 @@ let component =
             <a 
                 className="animate outline"
                 href=""
-                _hx_get="/hero/content" 
+                _hx_get="/content" 
                 _hx_target="main"
                 _hx_replace_url="/"
             >     

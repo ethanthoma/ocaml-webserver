@@ -14,7 +14,7 @@ build:
 
 run: build
 	docker load < result
-	docker run -d -t --name $(CONTAINER_NAME) -p $(LOCAL_HOST):3000 $(IMAGE_NAME):$(TAG) 
+	docker run --env-file ./.env -d -t --name $(CONTAINER_NAME) -p $(LOCAL_HOST):3000 $(IMAGE_NAME):$(TAG) 
 
 healthy:
 	wget $(LOCAL_HOST)/healthy

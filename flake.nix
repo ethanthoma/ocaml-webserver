@@ -13,6 +13,11 @@
         let
             pkgs = nixpkgs.legacyPackages.${system};
 
+            goDeps = with pkgs; [ 
+                go
+                libffi 
+            ];
+
             on = opam-nix.lib.${system};
 
             scope = on.buildDuneProject { } package src { 
@@ -33,7 +38,8 @@
                         final.fuzzy_match
                         final.omd
                     ];
-                    buildPhase = "dune build --release"; 
+                    nativeBuildInputs = oa.nativeBuildInputs ++ goDeps;
+                    buildPhase = "HOME=$TMPDIR dune build --release"; 
                     postInstall = ''
                         cp -rf $src/public $out/public
                         cp -rf $src/blogs $out/blogs
@@ -54,7 +60,7 @@
             };
 
             devShells.default = pkgs.callPackage ./nix/shell.nix {
-                inherit pkgs;
+                inherit pkgs goDeps;
             };
         }
     );

@@ -1,6 +1,6 @@
 open Tyxml;
 
-let component = 
+let component = (blog: Blog_cards.blog_metadata) => 
     <div className="hero">
         <div className="text">
             <p className="subtitle fancy">"computer science graduate student"</p>
@@ -11,13 +11,25 @@ let component =
                 learning, and explainable ML. This is a collection 
                 of my thoughts, code, and research..."
             </p>
-            <a className="call_to_action" href="/blogs">"Explore"</a>
+            <a 
+                className="call_to_action" 
+                _hx_get={"/explore/content"} 
+                _hx_target="main"
+                _hx_push_url={"/explore"}
+                _hs="on click trigger closeSearch on #search-results"
+            >
+                "Explore"
+            </a>
         </div>
       
         <div className="grid">
             <div id="blog-snippet" className="one">
-                // should fetch latest blog
-                <a href="/blogs/how_not_to_build_a_website.md">
+                <a 
+                    _hx_get={"/blogs/" ++ blog.filename ++ "/content"} 
+                    _hx_target="main"
+                    _hx_push_url={"/blogs/" ++ blog.filename}
+                    _hs="on click trigger closeSearch on #search-results"
+                >
                     <h2>"How not to Build a Website: Part One"</h2>
                     <p>
                         "How complicated can you make a static site?"
