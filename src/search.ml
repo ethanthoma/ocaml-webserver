@@ -1,7 +1,5 @@
 open Turso
 
-let blogs = get_blogs ()
-
 let search query ~items =
     let open! Core in
     let open Fuzzy_search in
@@ -18,6 +16,7 @@ let search query ~items =
 ;;
 
 let query name =
+    let blogs = Cache.Blogs.get_cache () in
     Fuzzy_search.Query.create name 
     |> search ~items:blogs
 ;;

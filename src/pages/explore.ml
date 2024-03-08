@@ -1,18 +1,13 @@
-let list_md_files =
-    Sys.readdir "./blogs" 
-    |> Array.to_list 
-    |> List.filter (fun file -> Filename.extension file = ".md")
-;;
-
-let blogs = Turso.get_blogs () 
-
 let content _ =
-    blogs
+    Cache.Blogs.update_cache ();
+    Cache.Blogs.get_cache ()
     |> Components.Blog_cards.component
     |> Components.View.to_response
 ;;
 
 let view _ = 
+    Cache.Blogs.update_cache ();
+    let blogs = Cache.Blogs.get_cache () in
     let children = [Components.Blog_cards.component blogs] in
     Components.Doc.createElement () ~children
     |> View.to_response
