@@ -1,5 +1,5 @@
 #search {
-    --width: calc(8 * var(--space-m-l));
+    --width: calc(8 * var(--space-l));
     --height: var(--space-l);
 
     font-size: var(--fs-200);
