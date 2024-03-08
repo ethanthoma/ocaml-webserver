@@ -49,6 +49,7 @@ h3 {
 a {
     color: var(--clr-gold);
     border-radius: var(--space-3xs);
+    cursor: pointer;
 
     &:hover, &:focus, &:focus-visible {
         color: var(--clr-rose);

@@ -66,6 +66,7 @@
                 position: relative;
                 
                 & button {
+                    cursor: pointer;
                     width: inherit;
                     height: var(--height);
                     text-overflow: ellipsis;

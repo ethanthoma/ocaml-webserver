@@ -9,7 +9,9 @@
     width: 100%;
 
     & a {
-        background: var(--clr-surface);
+        --_clr: var(--clr-surface);
+
+        background: var(--_clr);
         border-radius: var(--space-s);
         color: var(--clr-text);
         display: flex;
@@ -18,7 +20,7 @@
         text-decoration: none;
 
         &:hover {
-            background-color: var(--clr-muted);
+            --_clr: var(--clr-muted);
         }
 
         & p {
@@ -33,7 +35,7 @@
 
             & .tag {
                 font-size: var(--fs-200);
-                color: var(--clr-surface);
+                color: var(--_clr);
                 border-radius: var(--space-s);
                 background: var(--clr-rose);
                 padding-block: var(--space-3xs);
