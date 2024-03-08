@@ -29,6 +29,7 @@
     ppx_string
     ctypes
     ctypes-foreign
+    crunch
   )
   (tags (topics "Htmx" "JSX" "Ocaml"))
  )

@@ -1,7 +1,19 @@
 (executable
   (public_name webserver)
   (name main)
-  (libraries components pages turso dream tyxml fuzzy_match.search omd str)
+  (libraries components pages turso dream tyxml fuzzy_match.search omd str crunch)
   (preprocess (pps tyxml-jsx ppx_string lwt_ppx ppx_jane))
   (link_flags -cclib -Wl,--whole-archive -cclib ./lib/turso/libgo_turso.a -cclib -Wl,--no-whole-archive)
 )
+
+(rule
+ (target robots.ml)
+ (deps robots.txt)
+ (action (with-stdout-to %{null}
+  (run ocaml-crunch -e txt -m plain -o robots.ml .))))
+
+(rule
+ (target sitemap.ml)
+ (deps sitemap.xml)
+ (action (with-stdout-to %{null}
+  (run ocaml-crunch -e xml -m plain -o sitemap.ml .))))
