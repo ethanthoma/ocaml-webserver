@@ -15,6 +15,7 @@ let component = (blog: Turso.blog) =>
                 className="call-to-action" 
                 _hx_get={"/explore/content"} 
                 _hx_target="main"
+                _hx_swap="settle:150ms show:body:top"
                 _hx_push_url={"/explore"}
             >
                 "Explore"
@@ -27,6 +28,7 @@ let component = (blog: Turso.blog) =>
                     _hx_get={"/blogs/" ++ blog.filename ++ "/content"} 
                     _hx_target="main"
                     _hx_push_url={"/blogs/" ++ blog.filename}
+                    _hx_swap="settle:150ms show:body:top"
                 >
                     <h2>{Html.txt(blog.title)}</h2>
                     <p>{Html.txt(blog.description)}</p>

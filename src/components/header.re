@@ -27,7 +27,7 @@ let component =
                 href=""
                 _hx_get="/content" 
                 _hx_target="main"
-                _hx_swap="innerHTML settle:150ms" 
+                _hx_swap="settle:150ms show:body:top" 
                 _hx_replace_url="/"
             >     
                 <Icon src="./public/svg/logo.svg" alt="logo"/>

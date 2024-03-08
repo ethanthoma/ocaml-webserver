@@ -8,7 +8,7 @@ let blog_card = (blog: Turso.blog) =>
             _hx_get={"/blogs/" ++ blog.filename ++ "/content"} 
             _hx_target="main"
             _hx_push_url={"/blogs/" ++ blog.filename}
-            _hx_swap="settle:150ms"
+            _hx_swap="settle:150ms show:body:top"
         >
             <h2>{Html.txt(blog.title)}</h2> 
             <p>{Html.txt(blog.description)}</p>
