@@ -1,35 +1,36 @@
 header {
-    display: flex;
-    min-height: var(--space-2xl);
+    display:            flex;
+    min-height:         var(--space-2xl);
 
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: var(--space-m);
+    flex-wrap:          wrap;
+    justify-content:    space-between;
+    gap:                var(--space-m);
 
-    font-weight: 400;
-    font-family: var(--ff-heading);
-    font-size: var(--fs-400);
+    font-weight:        400;
+    font-family:        var(--ff-heading);
+    font-size:          var(--fs-400);
 
     -webkit-backdrop-filter: blur(12px);
-    backdrop-filter: blur(12px);
-    background: color-mix(in srgb, var(--clr-base), transparent 80%);
-    position: sticky;
-    top: 0;
-    z-index: 1;
+    backdrop-filter:    blur(12px);
+    background:         color-mix(in srgb, var(--clr-base), transparent 80%);
+    position:           sticky;
+    top:                0;
+    z-index:            1;
 
     & a {
-        color: inherit;
-        display: flex;
-        width: var(--space-l);
-        height: var(--space-l);
-        align-items: center;
-        justify-content: center;
+        color:              inherit;
+        display:            flex;
+        width:              var(--space-l);
+        height:             var(--space-l);
+        align-items:        center;
+        justify-content:    center;
     }
 
     & .icon {
         height: 100%;
         width: unset;
         aspect-ratio: 1;
+        transition: scale var(--animate-t) var(--animate-f);
     }
 
     & #left {
@@ -41,9 +42,9 @@ header {
         justify-content: space-between;
 
         & a {
-            color: var(--clr-base);
-            border-radius: var(--space-3xs);
-            background: linear-gradient(
+            color:          var(--clr-base);
+            border-radius:  var(--space-3xs);
+            background:     linear-gradient(
                 to bottom right,
                 var(--clr-foam),
                 var(--clr-pine)
@@ -51,47 +52,34 @@ header {
 
             &:hover, &:focus, &:focus-visible {
                 outline-offset: 2px;
-                outline: var(--clr-foam) solid 2px;
+                outline:        var(--clr-foam) solid 2px;
 
-                & .icon .content {
+                & .icon {
                     scale: 1.19;
                 }
             }
         }
         
         & .icon {
-            color: var(--clr-base);
-
-            stroke-width: 40;
-            stroke: currentColor;
-
-            & .content {
-                transition: scale 0.5s ease;
-                scale: 1.7;
-            }
+            color:          var(--clr-base);
+            stroke-width:   40;
+            stroke:         currentColor;
+            scale:          1.7;
         }
     }
 
     & #nav {
-        display: flex;
-        gap: var(--space-xs-s);
-        flex: 2;
-        justify-content: flex-end;
-        align-items: center;
-
-        list-style: none;
+        display:            flex;
+        gap:                var(--space-xs-s);
+        flex:               2;
+        justify-content:    flex-end;
+        align-items:        center;
 
         & li {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            transition-timing-function: var(--transition-timing-function);
-            transition-duration: var(--transition-duration);
-
-            & .icon {
-                transition: scale 0.5s ease;
-            }
+            display:            flex;
+            align-items:        center;
+            justify-content:    center;
+            list-style:         none;
 
             & a {
                 border-radius: var(--space-3xs);

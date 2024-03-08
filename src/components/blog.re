@@ -1,8 +1,9 @@
 open Tyxml;
 
 let component = (blog: Turso.blog) => 
-    <article className="blog-content">
+    <article className="blog-content animate-fade-in">
         <div className="date">{Html.txt(blog.date)}</div>
+
         {
             blog.content
             |> Omd.of_string 
@@ -12,10 +13,11 @@ let component = (blog: Turso.blog) =>
 
         <div className="explore-footer">
             <a 
-                className="call-to-action" 
-                _hx_get={"/explore/content"} 
+                className="call-to-action"
+                _hx_get="/explore/content"
                 _hx_target="main"
-                _hx_push_url={"/explore"}
+                _hx_push_url="/explore"
+                _hx_swap="settle:150ms"
             >
                 "Explore More"
             </a>

@@ -3,12 +3,12 @@ html {
 }
 
 body {
-    --transition-timing-function: cubic-bezier(.4,0,.2,1);
-    --transition-duration: .15s;
+    --animate-f: cubic-bezier(.4, 0, .2, 1);
+    --animate-t: .15s;
 
-    overflow-x: hidden;
+    overflow-x:     hidden;
 
-    max-width: 100dvw;
+    max-width:      100dvw;
 
     background:     var(--clr-base);
     color:          var(--clr-text);
@@ -31,7 +31,7 @@ h1, h2, h3 {
     font-family:    var(--ff-heading);
     letter-spacing: -0.01em;
     line-height:    1.2;
-    font-weight: 600;
+    font-weight:    600;
 }
 
 h1 {
@@ -47,9 +47,9 @@ h3 {
 }
     
 a {
-    color: var(--clr-gold);
-    border-radius: var(--space-3xs);
-    cursor: pointer;
+    color:          var(--clr-gold);
+    border-radius:  var(--space-3xs);
+    cursor:         pointer;
 
     &:hover, &:focus, &:focus-visible {
         color: var(--clr-rose);
@@ -57,27 +57,27 @@ a {
 
     &:focus-visible {
         outline-offset: 2px;
-        outline: var(--clr-foam) solid 2px;
+        outline:        var(--clr-foam) solid 2px;
     }
 }
 
 ::-webkit-scrollbar {
-    width: 15px;
+    width:      15px;
     background: transparent;
 }
 
 ::-webkit-scrollbar-track {
-    background: var(--clr-base);
-    box-shadow: inset 0 0 0 1px var(--clr-high);
-    border-radius: var(--space-3xs);
+    background:     var(--clr-base);
+    box-shadow:     inset 0 0 0 1px var(--clr-high);
+    border-radius:  var(--space-3xs);
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: var(--clr-muted);
-    border-radius: var(--space-3xs);
-    border: 3px solid transparent;
+    background-color:   var(--clr-muted);
+    border-radius:      var(--space-3xs);
+    border:             3px solid transparent;
     
-   background-clip: content-box;
+   background-clip:     content-box;
 }
 
 ::-webkit-scrollbar-thumb:hover {

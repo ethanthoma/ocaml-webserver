@@ -16,8 +16,10 @@
     &:hover, &:focus, &:focus-visible {
         outline: unset;
 
-        transition-timing-function: var(--transition-timing-function);
-        transition-duration: var(--transition-duration);
+        transition: 
+            color var(--animate-t) var(--animate-f),
+            background var(--animate-t) var(--animate-f),
+            box-shadow var(--animate-t) var(--animate-f);
 
         color: var(--clr-text);
         background: var(--clr-surface);

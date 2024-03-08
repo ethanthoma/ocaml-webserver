@@ -1,7 +1,7 @@
 open Tyxml;
 
 let component = (blog: Turso.blog) => 
-    <div className="hero">
+    <div className="hero animate-fade-in">
         <div className="text">
             <p className="subtitle fancy">"computer science graduate student"</p>
             <h1 className="title">"Ethan Thoma"</h1>

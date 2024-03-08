@@ -1,4 +1,7 @@
 .icon {
+    --animate-t: 0.5s;
+    --animate-f: ease;
+
     display: inline-block;
 
     color: var(--clr-text);

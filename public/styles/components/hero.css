@@ -72,8 +72,9 @@
         &:hover, &:focus, &:focus-visible {
             outline: unset;
 
-            transition-timing-function: var(--transition-timing-function);
-            transition-duration: var(--transition-duration);
+            transition: 
+                background-color var(--animate-t) var(--animate-f),
+                box-shadow var(--animate-t) var(--animate-f);
 
             background-color: var(--clr-muted);
             box-shadow: inset 0 0 0 2px var(--clr-foam);
@@ -132,12 +133,14 @@
                 var(--clr-iris),
                 var(--clr-gold)
             );
+
+            & .content {
+                transition: scale var(--animate-t) var(--animate-f);
+            }
         }
 
         &:hover, &:focus {
             & .icon .content {
-                transition: scale 0.5s ease;
-
                 scale: 1.3;
             }
         }

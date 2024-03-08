@@ -20,6 +20,9 @@ The nix flake has two build targets:
 The derivation can be built with `nix build` and the image can be built with 
 `nix build .#docker`.
 
+You can run it easily (assuming you have docker setup) with `make run`. If you 
+want to clean up afterwards, use `make clean`.
+
 ## Complications
 
 It uses Ocaml for the webserver and Reason for templating. I opted to use Turso 

@@ -17,28 +17,35 @@
     font-style:     normal;
 }
 
-.animate {
-    &:hover, &:focus, &:focus-visible {
-        transition-timing-function: cubic-bezier(.4,0,.2,1);
-        transition-duration: .15s;
-    }
-}
-
 .outline {
+    transition: outline var(--animate-t) var(--animate-f);
+
     &:hover, &:focus, &:focus-visible {
         outline-offset: 2px;
-        outline: var(--clr-foam) solid 2px;
+        outline:        var(--clr-foam) solid 2px;
     }
 }
 
 .border {
+    transition: 
+        background-color var(--animate-t) var(--animate-f),
+        box-shadow var(--animate-t) var(--animate-f);
+
     &:hover, &:focus, &:focus-visible {
         outline: unset;
 
-        transition-timing-function: var(--transition-timing-function);
-        transition-duration: var(--transition-duration);
+        background-color:   var(--clr-muted);
+        box-shadow:         inset 0 0 0 2px var(--clr-foam);
+    }
+}
 
-        background-color: var(--clr-muted);
-        box-shadow: inset 0 0 0 2px var(--clr-foam);
+.animate-fade-in {
+    --animate-f: ease-in;
+
+    opacity:    1;
+    transition: opacity var(--animate-t) var(--animate-f);
+
+    &.htmx-added {
+        opacity: 0;
     }
 }
