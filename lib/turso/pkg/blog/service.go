@@ -79,6 +79,8 @@ func GetBlogBySlug(slug string) (string, error) {
             blogs
         WHERE
             slug = '`,slug,`'
+        LIMIT 
+            1
         ;
     `))
     if err != nil {
