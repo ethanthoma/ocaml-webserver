@@ -7,12 +7,21 @@ let () =
 ;;
 
 type blog = {
-    filename: string;
-    title: string;
-    description: string;
-    content: string;
-    tags: string list;
-    date: string;
+    filename:       string;
+    title:          string;
+    description:    string;
+    content:        string;
+    tags:           string list;
+    date:           string;
+}
+
+let empty_blog = { 
+    filename    = "";
+    title       = "";
+    description = "";
+    content     = "";
+    tags        = [];
+    date        = "";
 }
 
 let json_to_blog json =
@@ -26,14 +35,27 @@ let json_to_blog json =
     { filename; title; description; content; tags; date; }
 ;;
 
-let get_blogs unit = 
-    let query_blogs = foreign "GetBlogTable" (void @-> returning string) in
-    let json = Yojson.Basic.from_string @@ query_blogs unit in
-    List.map json_to_blog (json |> Yojson.Basic.Util.to_list )
+let get_blogs () = 
+    let get_blog_table = foreign "GetBlogTable" (void @-> returning string_opt) in
+    match get_blog_table () with
+    | Some str_json ->
+        if str_json = "null" then
+            []
+        else
+            let json = Yojson.Basic.from_string str_json in
+            let blogs = List.map json_to_blog (json |> Yojson.Basic.Util.to_list ) in
+            blogs
+    | None -> []
 ;;
 
 let get_blog_by_slug slug =
-    let query_blog_by_slug = foreign "GetBlogBySlug" (string @-> returning string) in
-    let json = Yojson.Basic.from_string @@ query_blog_by_slug slug in
-    json_to_blog json
+    let get_blog_by_slug = foreign "GetBlogBySlug" (string @-> returning string_opt) in
+    match get_blog_by_slug slug with
+    | Some str_json ->
+        if str_json = "" then
+            empty_blog
+        else
+            let json = Yojson.Basic.from_string str_json in
+            json_to_blog json
+    | None -> empty_blog
 ;;

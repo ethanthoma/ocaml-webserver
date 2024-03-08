@@ -12,11 +12,10 @@ let component = (blog: Turso.blog) =>
                 of my thoughts, code, and research..."
             </p>
             <a 
-                className="call_to_action" 
+                className="call-to-action" 
                 _hx_get={"/explore/content"} 
                 _hx_target="main"
                 _hx_push_url={"/explore"}
-                _hs="on click trigger closeSearch on #search-results"
             >
                 "Explore"
             </a>
@@ -28,12 +27,9 @@ let component = (blog: Turso.blog) =>
                     _hx_get={"/blogs/" ++ blog.filename ++ "/content"} 
                     _hx_target="main"
                     _hx_push_url={"/blogs/" ++ blog.filename}
-                    _hs="on click trigger closeSearch on #search-results"
                 >
-                    <h2>"How not to Build a Website: Part One"</h2>
-                    <p>
-                        "How complicated can you make a static site?"
-                    </p>
+                    <h2>{Html.txt(blog.title)}</h2>
+                    <p>{Html.txt(blog.description)}</p>
                 </a>
             </div>
             <div className="spacer two"> </div>

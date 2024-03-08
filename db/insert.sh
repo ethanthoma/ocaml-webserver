@@ -1,18 +1,11 @@
-slug="how_to_build_a_website.md"
-title="How to Build a Website: Part Two"
-description="Being JS free with the HOT stack (htmx, Ocaml, Turso)."
+slug="how_not_to_build_a_website.md"
+title="How not to Build a Website: Part One"
+description="How complicated can you make a static site?"
 file_path="./blogs/${slug}"
 contents="$(cat "$file_path")"
 contents="$(echo "$contents" | sed "s/'/''/g" | sed 's/"/\\"/g')"
+tags="Nix, htmx, webdev, Bazel, Pulumi"
 
-sql="INSERT INTO blogs (title, slug, description, content, date) VALUES('${title}', '${slug}', '${description}', "
-sql="${sql} '${contents}'"
-sql="${sql}, date());"
+sql="INSERT INTO blogs (title, slug, description, content, tags, date) VALUES('${title}', '${slug}', '${description}', '${contents}', '${tags}', date());"
 
-sql="${sql} INSERT INTO blog_tags VALUES('${slug}', 1);"
-sql="${sql} INSERT INTO blog_tags VALUES('${slug}', 2);"
-sql="${sql} INSERT INTO blog_tags VALUES('${slug}', 3);"
-sql="${sql} INSERT INTO blog_tags VALUES('${slug}', 5);"
-sql="${sql} INSERT INTO blog_tags VALUES('${slug}', 6);"
-
-echo "$sql" | turso db shell my-db
+echo "$sql" | turso db shell $TURSO_DATABASE_NAME

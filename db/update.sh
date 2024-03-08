@@ -7,4 +7,4 @@ sql="UPDATE blogs SET content = "
 sql="${sql} '"${contents}"'"
 sql="${sql} WHERE slug = '${slug}'"
 
-echo "$sql" | turso db shell $TURSO_DATABASE
+echo "$sql" | turso db shell $TURSO_DATABASE_NAME

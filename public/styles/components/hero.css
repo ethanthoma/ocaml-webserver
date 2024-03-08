@@ -24,33 +24,6 @@
         font-size: var(--fs-100);
         color: var(--clr-pine);
     }
-
-    & .call_to_action {
-        width: fit-content;
-
-        text-align: center;
-        display: inline-block;
-        text-decoration: none;
-
-        padding-block: var(--space-s);
-        padding-inline: var(--space-l);
-
-        color: var(--clr-base);
-        background: var(--clr-foam);
-
-        border-radius: var(--space-xs);
-
-        &:hover, &:focus, &:focus-visible {
-            outline: unset;
-
-            transition-timing-function: var(--transition-timing-function);
-            transition-duration: var(--transition-duration);
-
-            color: var(--clr-text);
-            background: var(--clr-surface);
-            box-shadow: inset 0 0 0 2px var(--clr-foam);
-        }
-    }
 }
 
 .hero .grid {
