@@ -15,8 +15,15 @@
         margin-block-start: var(--space-l-xl);
     }
 
+    & .date {
+        margin-block-start: var(--space-3xs-2xs);
+        text-align: center;
+        font-family: var(--ff-heading);
+        font-size: var(--fs-200);
+    }
+
     & h1 {
-        margin-block-start: var(--space-s-m);
+        margin-block-start: var(--space-3xs-2xs);
         text-align: center;
     }
 
@@ -27,13 +34,10 @@
         width: calc(var(--_width) * 1%);
         transform: translateX(calc(var(--_transx) * 100%));
 
-
         content: ' ';
         margin-block-start: var(--space-m-l);
         display: block;
         border: 1px solid var(--clr-text);
-
-        
         border-radius: var(--space-3xs);
     }
 
