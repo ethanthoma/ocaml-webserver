@@ -49,7 +49,7 @@ let row = (blog: Turso.blog) =>
             className="border"
             _hx_get={"/blogs/" ++ blog.filename ++ "/content"} 
             _hx_target="main"
-            _hx_swap="settle:150ms"
+            _hx_swap="settle:150ms show:body:top"
             _hx_push_url={"/blogs/" ++ blog.filename}
             _hs="on click trigger closeSearch on #search-results"
         >
