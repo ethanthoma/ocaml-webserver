@@ -1,7 +1,6 @@
 open Tyxml;
 
-let createElement = (~children, ()) => {
-    let title = Html.txt("Ethan Thoma")
+let createElement = (~title: string, ~children, ()) => {
     let description = <meta name="description" content="Ethan Thoma's personal website written on Ocaml using the HOT stack. Blogging and machine learning related."/>
 
     let fonts = <link href="/public/fonts/fonts.css" rel="stylesheet"/>
@@ -20,7 +19,7 @@ let createElement = (~children, ()) => {
                 <meta charset="UTF-8"/>
                 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
                 <meta name="htmx-config" content="{\"attributes\":\"hs\"}" />
-                <title> title </title> 
+                <title>{Html.txt(title)}</title> 
                 description
                 fonts
                 htmx

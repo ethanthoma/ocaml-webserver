@@ -19,7 +19,7 @@ let empty_blog = {
     filename    = "";
     title       = "";
     description = "";
-    content     = "";
+    content     = "# Not Yet Released\n\nPlease try again in the future!";
     tags        = [];
     date        = "";
 }

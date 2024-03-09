@@ -1,9 +1,9 @@
 <?xml version="1.0" standalone="no"?>
-<svg role="img" aria-labelledby="uniqueTitleID uniqueDescID" version="1.0" xmlns="http://www.w3.org/2000/svg"
+<svg role="img" aria-labelledby="logo-uniqueTitleID logo-uniqueDescID" version="1.0" xmlns="http://www.w3.org/2000/svg"
     width="900.000000pt" height="900.000000pt" viewBox="0 0 900.000000 900.000000"
     preserveAspectRatio="xMidYMid meet">
-    <title id="uniqueTitleID">Website Logo</title>
-    <desc id="uniqueDescID">A mix of a flower and a snowflake. Geometric. Made by Ellen Jeong.</desc>
+    <title id="logo-uniqueTitleID">Website Logo</title>
+    <desc id="logo-uniqueDescID">A mix of a flower and a snowflake. Geometric. Made by Ellen Jeong.</desc>
     <g transform="translate(0.000000,900.000000) scale(0.100000,-0.100000)"
         fill="currentColor">
         <path d="M4456 6515 c-15 -14 -59 -51 -99 -82 -39 -32 -81 -66 -92 -77 -11
