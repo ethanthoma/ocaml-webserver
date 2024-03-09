@@ -30,7 +30,7 @@ let () =
         get "/robots.txt"           @@ static ~loader:robots_loader "";
         get "/sitemap.xml"          @@ static ~loader:sitemap_loader "";
         get "/public/js/**"         @@ cache_control @@ static "./public/js";
-        get "/public/font/**"       @@ cache_control @@ static "./public/font";
+        get "/public/fonts/**"       @@ cache_control @@ static "./public/fonts";
         get "/public/**"            @@ static "./public";
         get "/healthy"              get_healthy_handler;
         get "/"                     Pages.Index.view;
