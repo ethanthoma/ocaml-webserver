@@ -6,9 +6,9 @@ let createElement = (~children, ()) => {
 
     let fonts = <link href="/public/fonts/fonts.css" rel="stylesheet"/>
 
-    let htmx = <script src="/public/js/htmx@1.9.10.min.js"></script>
-    let hyperscript = <script src="/public/js/_hyperscript@0.9.12.min.js"></script>
-    let anti_prime = <script src="/public/js/antiThePrimeagen@0.0.1.js"></script>
+    let htmx = <script defer="" src="/public/js/htmx@1.9.10.min.js"></script>
+    let hyperscript = <script defer="" src="/public/js/_hyperscript@0.9.12.min.js"></script>
+    let anti_prime = <script async="" src="/public/js/antiThePrimeagen@0.0.1.js"></script>
 
     let style = <link rel="stylesheet" href="/public/styles/main.css"/>
 
