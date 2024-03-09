@@ -2,9 +2,11 @@ open Tyxml;
 
 let bar =
     <div id="search-bar">
+        <label className="hidden" _for="search">"Search for blogs..."</label>
         <input 
             className="form-control outline" 
             type_="search"
+            id="search"
             autocomplete="off"
             name="search" 
             placeholder="Search for blogs..." 

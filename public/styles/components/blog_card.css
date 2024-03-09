@@ -18,9 +18,11 @@
         flex-direction: column;
         padding: var(--space-m);
         text-decoration: none;
+        transition: transform 0.2s cubic-bezier(0,0,.2,1);;
 
         &:hover {
             --_clr: var(--clr-muted);
+            transform: translateY(calc(-1 * var(--space-3xs)));
         }
 
         & p {
