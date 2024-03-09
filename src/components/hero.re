@@ -13,6 +13,7 @@ let component = (blog: Turso.blog) =>
             </p>
             <a 
                 className="call-to-action" 
+                href="/explore"
                 _hx_get={"/explore/content"} 
                 _hx_target="main"
                 _hx_swap="settle:150ms show:body:top"
@@ -25,6 +26,7 @@ let component = (blog: Turso.blog) =>
         <div className="grid">
             <div id="blog-snippet" className="one">
                 <a 
+                    href={"/blogs/" ++ blog.filename}
                     _hx_get={"/blogs/" ++ blog.filename ++ "/content"} 
                     _hx_target="main"
                     _hx_push_url={"/blogs/" ++ blog.filename}
