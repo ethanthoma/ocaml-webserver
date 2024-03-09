@@ -16,7 +16,7 @@
 
     /* font family */
     --ff-heading:   'Montserrat', sans-serif;
-    --ff-body:      'Hind', sans-serif;
+    --ff-body:      'Inter', sans-serif;
 
     /* font size */
     --fs-100: clamp(0.7813rem, 0.7748rem + 0.0325vw, 0.8rem);

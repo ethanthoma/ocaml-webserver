@@ -3,7 +3,7 @@ footer {
     flex-direction: column;
     align-items: center;
 
-    margin-block-start: var(--space-l-xl);
+    margin-block-start: var(--space-l);
     padding-block: var(--space-xl);
 
     border-block-start: 2px solid var(--clr-high);

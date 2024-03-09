@@ -17,12 +17,19 @@ let sitemap_loader _root _ _request =
     | Some asset -> Dream.respond asset
 ;;
 
+let cache_js (handler: Dream.handler) request  =
+    let%lwt response = handler request in
+    Dream.add_header response "Cache-Control" "pubic, max-age=604800, immutable";
+    Lwt.return response
+;;
+
 let () = 
     run ~interface:"0.0.0.0" ~port:3000 
     @@ logger
     @@ router [
         get "/robots.txt"           @@ static ~loader:robots_loader "";
         get "/sitemap.xml"          @@ static ~loader:sitemap_loader "";
+        get "/public/js/**"         @@ cache_js @@ static "./public/js";
         get "/public/**"            @@ static "./public";
         get "/healthy"              get_healthy_handler;
         get "/"                     Pages.Index.view;
