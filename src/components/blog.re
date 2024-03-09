@@ -14,6 +14,7 @@ let component = (blog: Turso.blog) =>
         <div className="explore-footer">
             <a 
                 className="call-to-action"
+                aria_label="See all the blogs"
                 _hx_get="/explore/content"
                 _hx_target="main"
                 _hx_push_url="/explore"

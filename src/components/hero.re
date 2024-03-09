@@ -14,10 +14,11 @@ let component = (blog: Turso.blog) =>
             <a 
                 className="call-to-action" 
                 href="/explore"
-                _hx_get={"/explore/content"} 
+                aria_label="See all the blogs"
+                _hx_get="/explore/content"
                 _hx_target="main"
                 _hx_swap="settle:150ms show:body:top"
-                _hx_push_url={"/explore"}
+                _hx_push_url="/explore"
             >
                 "Explore"
             </a>
@@ -27,6 +28,7 @@ let component = (blog: Turso.blog) =>
             <div id="blog-snippet" className="one">
                 <a 
                     href={"/blogs/" ++ blog.filename}
+                    aria_label=[blog.description]
                     _hx_get={"/blogs/" ++ blog.filename ++ "/content"} 
                     _hx_target="main"
                     _hx_push_url={"/blogs/" ++ blog.filename}

@@ -5,6 +5,7 @@ let blog_card = (blog: Turso.blog) =>
         <a 
             className="border"
             tabindex=0
+            aria_label={[blog.description]}
             _hx_get={"/blogs/" ++ blog.filename ++ "/content"} 
             _hx_target="main"
             _hx_push_url={"/blogs/" ++ blog.filename}
