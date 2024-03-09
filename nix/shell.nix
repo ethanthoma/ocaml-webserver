@@ -2,7 +2,7 @@
     pkgs ? let 
         nixpkgs = fetchTarball "https://github.com/NixOS/nixpkgs/tarball/nixpkgs-unstable";
     in import nixpkgs {},
-    goDeps
+    devDeps
 }:
 
 pkgs.mkShell {
@@ -15,7 +15,7 @@ pkgs.mkShell {
         opam
         turso-cli
         pkg-config
-    ] ++ goDeps;
+    ] ++ devDeps;
 
     shellHook = ''
         eval $(opam env --switch=website)

@@ -7,13 +7,12 @@
 )
 
 (rule
- (target robots.ml)
- (deps robots.txt)
- (action (with-stdout-to %{null}
-  (run ocaml-crunch -e txt -m plain -o robots.ml .))))
-
-(rule
- (target sitemap.ml)
- (deps sitemap.xml)
- (action (with-stdout-to %{null}
-  (run ocaml-crunch -e xml -m plain -o sitemap.ml .))))
+  (target minified_css.ml)
+  (deps (source_tree ../public/styles))
+  (action (with-stdout-to %{null}
+    (chdir ../public/styles 
+        (progn 
+           (run lightningcss --bundle main.css -o main.min.css)
+           (run mv main.min.css ../../src/main.css)
+           (chdir ../../src
+           (run ocaml-crunch -e css -m plain -o minified_css.ml .)))))))

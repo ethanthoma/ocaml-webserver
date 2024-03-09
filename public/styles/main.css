@@ -1,5 +1,3 @@
-@layer base, components;
-
 @import "abstract/index.css";
 @import "base/index.css" layer(base);
 @import "components/index.css" layer(components);

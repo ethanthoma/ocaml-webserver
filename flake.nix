@@ -18,6 +18,10 @@
                 libffi 
             ];
 
+            cssDeps = with pkgs; [ 
+                lightningcss
+            ];
+
             on = opam-nix.lib.${system};
 
             scope = on.buildDuneProject { } package src { 
@@ -38,7 +42,7 @@
                         final.fuzzy_match
                         final.omd
                     ];
-                    nativeBuildInputs = oa.nativeBuildInputs ++ goDeps;
+                    nativeBuildInputs = oa.nativeBuildInputs ++ goDeps ++ cssDeps;
                     buildPhase = "HOME=$TMPDIR dune build --release"; 
                     postInstall = ''
                         cp -rf $src/public $out/public
@@ -60,7 +64,9 @@
             };
 
             devShells.default = pkgs.callPackage ./nix/shell.nix {
-                inherit pkgs goDeps;
+                inherit pkgs;
+
+                devDeps = goDeps ++ cssDeps;
             };
         }
     );
