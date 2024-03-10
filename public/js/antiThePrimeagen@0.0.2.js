@@ -2,7 +2,9 @@
 * wants. His twitter is here: https://twitter.com/ThePrimeagen
 */
 
-let antiThePrimeagenEnabled = true;
+// doesnt work across element tags.
+// TODO: get it to only take effect for text in blog-content and work acorss nodes
+let antiThePrimeagenEnabled = false;
 
 function mouseSelection(element) {
     const selection = window.getSelection();

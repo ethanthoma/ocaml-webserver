@@ -4,8 +4,8 @@ let content request =
     let blog =
         Dream.param request "slug"
         |> Turso.get_blog_by_slug
-    in 
-    Components.Blog.component blog
+    in blog
+    |> Components.Blog.component
     |> Components.View.to_response ~title:(title blog)
 ;;
 

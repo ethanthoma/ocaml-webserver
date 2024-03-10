@@ -29,9 +29,9 @@ let public = [
 let () = 
     run ~interface:"0.0.0.0" ~port:3000 
     @@ logger
-    @@ router @@ List.append
+    @@ router @@ 
         public
-        [
+        @ [
             get "/"                     Pages.Index.view;
             get "/"                     @@ static "./public/seo";
             get "/healthy"              get_healthy_handler;

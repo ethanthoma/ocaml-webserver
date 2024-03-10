@@ -35,13 +35,26 @@
 
     grid-gap: var(--space-xs);
 
-    & > * {
+    & > div {
         --_base-border-radius: var(--space-m);
 
         background-color: var(--clr-surface);
         border-radius: var(--_base-border-radius);
 
         text-align: center;
+
+        &:hover, &:focus, &:focus-visible {
+            & a {
+                outline: unset;
+
+                transition: 
+                    background-color var(--animate-t) var(--animate-f),
+                    box-shadow var(--animate-t) var(--animate-f);
+
+                background-color: var(--clr-muted);
+                box-shadow: inset 0 0 0 2px var(--clr-foam);
+            }
+        }
     }
 
     & a {
@@ -67,17 +80,6 @@
             margin-block-start: var(--space-2xs);
 
             font-size: var(--fs-200);
-        }
-
-        &:hover, &:focus, &:focus-visible {
-            outline: unset;
-
-            transition: 
-                background-color var(--animate-t) var(--animate-f),
-                box-shadow var(--animate-t) var(--animate-f);
-
-            background-color: var(--clr-muted);
-            box-shadow: inset 0 0 0 2px var(--clr-foam);
         }
     }
 
@@ -141,7 +143,7 @@
 
         &:hover, &:focus {
             & .icon .content {
-                scale: 1.3;
+                scale: 1.42857142857;
             }
         }
     }

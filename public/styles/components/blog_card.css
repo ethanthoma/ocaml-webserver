@@ -20,7 +20,7 @@
         text-decoration: none;
         transition: transform 0.2s cubic-bezier(0,0,.2,1);;
 
-        &:hover {
+        &:hover, &:focus, &:focus-visible {
             --_clr: var(--clr-muted);
             transform: translateY(calc(-1 * var(--space-3xs)));
         }
@@ -40,9 +40,14 @@
                 font-size: var(--fs-200);
                 color: var(--_clr);
                 border-radius: var(--space-s);
-                background: var(--clr-rose);
                 padding-block: var(--space-3xs);
                 padding-inline: var(--space-xs);
+                background: linear-gradient(
+                    to bottom right,
+                    var(--clr-rose),
+                    var(--clr-rose),
+                    var(--clr-love)
+                );
             }
         }
 

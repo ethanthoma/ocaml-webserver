@@ -7,7 +7,7 @@ let createElement = (~title: string, ~children, ()) => {
 
     let htmx = <script defer="" src="/public/js/htmx@1.9.10.min.js"></script>
     let hyperscript = <script defer="" src="/public/js/_hyperscript@0.9.12.min.js"></script>
-    let anti_prime = <script async="" src="/public/js/antiThePrimeagen@0.0.1.js"></script>
+    let anti_prime = <script async="" src="/public/js/antiThePrimeagen@0.0.2.js"></script>
 
     let style = <link rel="stylesheet" href="/public/styles/main.css"/>
 
