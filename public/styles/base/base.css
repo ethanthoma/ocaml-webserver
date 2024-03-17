@@ -50,6 +50,9 @@ a {
     color:          var(--clr-gold);
     border-radius:  var(--space-3xs);
     cursor:         pointer;
+    transition: 
+        color var(--animate-t) var(--animate-f),
+        color var(--animate-t) var(--animate-f);
 
     &:hover, &:focus, &:focus-visible {
         color: var(--clr-rose);
@@ -77,7 +80,7 @@ a {
     border-radius:      var(--space-3xs);
     border:             3px solid transparent;
     
-   background-clip:     content-box;
+    background-clip:    content-box;
 }
 
 ::-webkit-scrollbar-thumb:hover {

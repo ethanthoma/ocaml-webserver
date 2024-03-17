@@ -23,8 +23,8 @@ let blog_card = (blog: Turso.blog) =>
     </article>
 
 let component = (blogs) =>
-        <section className="blog-section animate-fade-in">
-            ...{
-                List.map(blog_card, blogs)
-            }
-        </section>
+    <section className="blog-section animate-fade-in">
+        ...{
+            List.map(blog_card, blogs)
+        }
+    </section>

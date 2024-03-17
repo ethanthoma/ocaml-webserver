@@ -28,7 +28,6 @@ let results =
             on closeSearch add .hidden then
             on openSearch remove .hidden
         ">
-        <div className="search-results-underlay" _hs="on click trigger closeSearch"></div>
         <ul 
             id="search-results-content" 
             _hs="

@@ -62,7 +62,7 @@
                 white-space: pre;
             }
 
-            &:hover {
+            &:hover, &:focus, &:focus-visible {
                 text-decoration-line: underline;
             }
         }

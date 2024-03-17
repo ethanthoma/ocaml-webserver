@@ -16,7 +16,7 @@ let search query ~items =
 ;;
 
 let query name =
-    let blogs = Cache.Blogs.get_cache () in
+    let blogs = Cache.Blogs.get () in
     Fuzzy_search.Query.create name 
     |> search ~items:blogs
 ;;

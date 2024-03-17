@@ -30,61 +30,51 @@
 
     & #search-results {
         width: var(--width);
+    }
+}
 
-        z-index: 2;
+#search-results-content {
+    --max-count: 5;
 
-        & .search-results-underlay {
-            position: fixed;
-            inset: 0;
-            width: 100vw;
-            height: 100vh;
-            z-index: -1;
-        }
+    z-index: 1;
 
-        & #search-results-content {
-            --max-count: 5;
+    width: calc(1 * var(--width));
+    max-height: calc(var(--max-count) * var(--height));
 
-            z-index: 1;
-            
-            width: calc(1 * var(--width));
-            max-height: calc(var(--max-count) * var(--height));
+    overflow-x: hidden;
+    overflow-y: auto;
 
-            overflow-x: hidden;
-            overflow-y: auto;
+    position: absolute;
+    transform: translateY(var(--height));
 
-            position: absolute;
-            transform: translateY(var(--height));
+    border-radius: var(--space-3xs);
 
+    background: var(--clr-surface);
+    box-shadow: inset 0 0 0 1px var(--clr-high);
+
+    & li {
+        display: block;
+        width: 100%;
+        position: relative;
+
+        & button {
+            cursor: pointer;
+            width: inherit;
+            height: var(--height);
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+
+            padding-block: var(--space-3xs);
+            padding-inline: var(--space-xs);
+
+            text-align: start;
+            color: inherit;
+            background: inherit;
             border-radius: var(--space-3xs);
 
-            background: var(--clr-surface);
-            box-shadow: inset 0 0 0 1px var(--clr-high);
-
-            & li {
-                display: block;
-                width: 100%;
-                position: relative;
-                
-                & button {
-                    cursor: pointer;
-                    width: inherit;
-                    height: var(--height);
-                    text-overflow: ellipsis;
-                    overflow: hidden;
-                    white-space: nowrap;
-
-                    padding-block: var(--space-3xs);
-                    padding-inline: var(--space-xs);
-
-                    text-align: start;
-                    color: inherit;
-                    background: inherit;
-                    border-radius: var(--space-3xs);
-
-                    &:hover, &:focus, &:focus-visible {
-                        background: var(--clr-overlay);
-                    }
-                }
+            &:hover, &:focus, &:focus-visible {
+                background: var(--clr-overlay);
             }
         }
     }
