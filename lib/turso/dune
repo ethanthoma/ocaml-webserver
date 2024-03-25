@@ -3,6 +3,8 @@
  (public_name webserver.turso)
  (foreign_archives go_turso)
  (libraries ctypes ctypes.foreign yojson dream)
+ (preprocess
+  (pps lwt_ppx))
  (flags
   (:standard -w -49))
  (wrapped false)
