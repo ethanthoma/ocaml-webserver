@@ -1,18 +1,45 @@
 (executable
-  (public_name webserver)
-  (name main)
-  (libraries components pages turso dream tyxml fuzzy_match.search omd str crunch)
-  (preprocess (pps tyxml-jsx ppx_string lwt_ppx ppx_jane))
-  (link_flags -cclib -Wl,--whole-archive -cclib ./lib/turso/libgo_turso.a -cclib -Wl,--no-whole-archive)
-)
+ (public_name webserver)
+ (name main)
+ (libraries
+  components
+  pages
+  turso
+  dream
+  tyxml
+  fuzzy_match.search
+  omd
+  str
+  crunch)
+ (preprocess
+  (pps tyxml-jsx ppx_string lwt_ppx ppx_jane))
+ (link_flags
+  -cclib
+  -Wl,--whole-archive
+  -cclib
+  ./lib/turso/libgo_turso.a
+  -cclib
+  -Wl,--no-whole-archive))
 
 (rule
-  (target minified_css.ml)
-  (deps (source_tree ../public/styles))
-  (action (with-stdout-to %{null}
-    (chdir ../public/styles 
-        (progn 
-           (run lightningcss --bundle main.css -o main.min.css)
-           (run mv main.min.css ../../src/main.css)
-           (chdir ../../src
-           (run ocaml-crunch -e css -m plain -o minified_css.ml .)))))))
+ (target minified_css.ml)
+ (deps
+  (source_tree ../public/styles))
+ (action
+  (with-stdout-to
+   %{null}
+   (chdir
+    ../public/styles
+    (progn
+     (run
+      lightningcss
+      --bundle
+      main.css
+      -t
+      "> .5% or last 2 versions"
+      -o
+      main.min.css)
+     (run mv main.min.css ../../src/main.css)
+     (chdir
+      ../../src
+      (run ocaml-crunch -e css -m plain -o minified_css.ml .)))))))

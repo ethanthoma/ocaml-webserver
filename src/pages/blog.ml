@@ -3,7 +3,7 @@ let title (blog: Turso.blog) = blog.title ^ " / Ethan Thoma"
 let content request =
     let blog =
         Dream.param request "slug"
-        |> Turso.get_blog_by_slug
+        |> Cache.Blogs.get_by_slug
     in blog
     |> Components.Blog.component
     |> Components.View.to_response ~title:(title blog)
@@ -12,9 +12,8 @@ let content request =
 let view request =
     let blog = 
         Dream.param request "slug" 
-        |> Turso.get_blog_by_slug
-    in
-    let children = [Components.Blog.component blog] in
+        |> Cache.Blogs.get_by_slug
+    in let children = [Components.Blog.component blog] in
     Components.Doc.createElement () ~title:(title blog) ~children
     |> View.to_response
 ;;

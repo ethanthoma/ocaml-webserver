@@ -1,19 +1,25 @@
 (library
-  (name turso)
-  (public_name webserver.turso)
-  (foreign_archives go_turso)
-  (libraries ctypes ctypes.foreign yojson dream)
-  (flags (:standard -w -49))
-  (wrapped false)
-  (library_flags (-cclib -lgo_turso)))
+ (name turso)
+ (public_name webserver.turso)
+ (foreign_archives go_turso)
+ (libraries ctypes ctypes.foreign yojson dream)
+ (flags
+  (:standard -w -49))
+ (wrapped false)
+ (library_flags
+  (-cclib -lgo_turso)))
 
 (rule
-  (deps (source_tree .))
-  (targets libgo_turso.a dllgo_turso.so libgo_turso.h)
-  (action 
-    (no-infer 
-      (ignore-stdout 
-        (progn 
-            (run make))))))
+ (deps
+  (source_tree .))
+ (targets libgo_turso.a dllgo_turso.so libgo_turso.h)
+ (action
+  (no-infer
+   (ignore-stdout
+    (progn
+     (run make))))))
 
-(env (utop (env-vars (OCAML_INTEROP_NO_CAML_STARTUP true))))
+(env
+ (utop
+  (env-vars
+   (OCAML_INTEROP_NO_CAML_STARTUP true))))
