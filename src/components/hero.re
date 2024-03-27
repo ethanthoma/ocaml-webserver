@@ -11,16 +11,7 @@ let component = (blog: Turso.blog) =>
                 learning, and explainable ML. This is a collection
                 of my thoughts, code, and research..."
       </p>
-      <a
-        className="call-to-action"
-        href="/explore"
-        aria_label="See all the blogs"
-        _hx_get="/explore/content"
-        _hx_target="main"
-        _hx_swap="settle:150ms show:body:top"
-        _hx_push_url="/explore">
-        "Explore"
-      </a>
+      <Call_to_action />
     </div>
     <div className="grid">
       <div id="blog-snippet" className="one">
