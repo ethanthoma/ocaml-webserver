@@ -1,17 +1,17 @@
 .blog-content {
     background: var(--clr-surface);
 
-    border-radius:  var(--space-3xs-2xs);
+    border-radius: var(--space-3xs-2xs);
 
     padding-block: var(--space-m-l);
     padding-inline: var(--space-xs-xl);
 
     /* margin spacing */
-    & > * + * {
+    &>*+* {
         margin-block-start: var(--space-m-l);
     }
 
-    & > button {
+    &>button {
         margin-block-start: var(--space-l-xl);
     }
 
@@ -41,23 +41,25 @@
         border-radius: var(--space-3xs);
     }
 
-    & h2, & h3 {
+    & h2,
+    & h3 {
         margin-block-start: var(--space-l-xl);
     }
 
-    & ul, & ol {
+    & ul,
+    & ol {
         list-style-position: inside;
 
-        & > li {
+        &>li {
             margin-inline-start: var(--space-m);
         }
 
-        & > * + li {
+        &>*+li {
             margin-block-start: var(--space-2xs);
         }
     }
 
-    & p > code {
+    & p>code {
         color: var(--clr-foam);
         font-style: italic;
     }
@@ -68,7 +70,7 @@
         font-size: var(--fs-200);
         overflow-x: auto;
 
-        & > code {
+        &>code {
             word-wrap: break-word;
         }
     }

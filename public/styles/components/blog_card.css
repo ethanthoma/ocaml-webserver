@@ -18,9 +18,12 @@
         flex-direction: column;
         padding: var(--space-m);
         text-decoration: none;
-        transition: transform 0.2s cubic-bezier(0,0,.2,1);;
+        transition: transform 0.2s cubic-bezier(0, 0, .2, 1);
+        ;
 
-        &:hover, &:focus, &:focus-visible {
+        &:hover,
+        &:focus,
+        &:focus-visible {
             --_clr: var(--clr-muted);
             transform: translateY(calc(-1 * var(--space-3xs)));
         }
@@ -42,12 +45,10 @@
                 border-radius: var(--space-s);
                 padding-block: var(--space-3xs);
                 padding-inline: var(--space-xs);
-                background: linear-gradient(
-                    to bottom right,
-                    var(--clr-rose),
-                    var(--clr-rose),
-                    var(--clr-love)
-                );
+                background: linear-gradient(to bottom right,
+                        var(--clr-rose),
+                        var(--clr-rose),
+                        var(--clr-love));
             }
         }
 
@@ -62,7 +63,9 @@
                 white-space: pre;
             }
 
-            &:hover, &:focus, &:focus-visible {
+            &:hover,
+            &:focus,
+            &:focus-visible {
                 text-decoration-line: underline;
             }
         }

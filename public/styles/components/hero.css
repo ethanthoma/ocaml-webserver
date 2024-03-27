@@ -13,9 +13,9 @@
     flex-direction: column;
 
     justify-content: center;
-    margin-block: var(--space-s-l);
+    margin-block-end: var(--space-s-l);
 
-    & > * + * {
+    &>*+* {
         margin-block-start: var(--space-xs-s);
     }
 
@@ -35,7 +35,7 @@
 
     grid-gap: var(--space-xs);
 
-    & > div {
+    &>div {
         --_base-border-radius: var(--space-m);
 
         background-color: var(--clr-surface);
@@ -43,11 +43,13 @@
 
         text-align: center;
 
-        &:hover, &:focus, &:focus-visible {
+        &:hover,
+        &:focus,
+        &:focus-visible {
             & a {
                 outline: unset;
 
-                transition: 
+                transition:
                     background-color var(--animate-t) var(--animate-f),
                     box-shadow var(--animate-t) var(--animate-f);
 
@@ -88,17 +90,15 @@
         grid-row: 1 / 3;
     }
 
-    & .two { 
+    & .two {
         border-top-right-radius: calc(4 * var(--_base-border-radius));
 
         grid-column: 3 / 4;
         grid-row: 1 / 3;
 
-        background: linear-gradient(
-            to bottom right,
-            var(--clr-iris),
-            var(--clr-love)
-        );
+        background: linear-gradient(to bottom right,
+                var(--clr-iris),
+                var(--clr-love));
     }
 
     & .three {
@@ -107,11 +107,9 @@
         grid-column: 1 / 2;
         grid-row: 3 / 4;
 
-        background: linear-gradient(
-            to bottom right,
-            var(--clr-foam),
-            var(--clr-pine)
-        );
+        background: linear-gradient(to bottom right,
+                var(--clr-foam),
+                var(--clr-pine));
     }
 
     & .four {
@@ -130,18 +128,17 @@
             padding: var(--space-xs);
 
             border-radius: var(--space-s);
-            background: linear-gradient(
-                to bottom right,
-                var(--clr-iris),
-                var(--clr-gold)
-            );
+            background: linear-gradient(to bottom right,
+                    var(--clr-iris),
+                    var(--clr-gold));
 
             & .content {
                 transition: scale var(--animate-t) var(--animate-f);
             }
         }
 
-        &:hover, &:focus {
+        &:hover,
+        &:focus {
             & .icon .content {
                 scale: 1.42857142857;
             }

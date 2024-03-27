@@ -13,10 +13,12 @@
 
     border-radius: var(--space-xs);
 
-    &:hover, &:focus, &:focus-visible {
+    &:hover,
+    &:focus,
+    &:focus-visible {
         outline: unset;
 
-        transition: 
+        transition:
             color var(--animate-t) var(--animate-f),
             background var(--animate-t) var(--animate-f),
             box-shadow var(--animate-t) var(--animate-f);

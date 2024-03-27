@@ -2,14 +2,12 @@
     white-space: nowrap;
 
     /* bg gradient */
-    background: linear-gradient(
-        to right,
-        var(--clr-rose),
-        var(--clr-iris),
-        var(--clr-foam),
-        var(--clr-iris),
-        var(--clr-rose)
-    );
+    background: linear-gradient(to right,
+            var(--clr-rose),
+            var(--clr-iris),
+            var(--clr-foam),
+            var(--clr-iris),
+            var(--clr-rose));
     background-size: 200%;
     -webkit-background-clip: text;
     background-clip: text;
@@ -28,4 +26,3 @@
         background-position: -200% center;
     }
 }
-

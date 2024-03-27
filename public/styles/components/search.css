@@ -73,7 +73,9 @@
             background: inherit;
             border-radius: var(--space-3xs);
 
-            &:hover, &:focus, &:focus-visible {
+            &:hover,
+            &:focus,
+            &:focus-visible {
                 background: var(--clr-overlay);
             }
         }

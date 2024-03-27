@@ -1,29 +1,29 @@
 header {
-    display:            flex;
-    min-height:         var(--space-2xl);
+    display: flex;
+    min-height: var(--space-2xl);
 
-    flex-wrap:          wrap;
-    justify-content:    space-between;
-    gap:                var(--space-m);
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: var(--space-m);
 
-    font-weight:        400;
-    font-family:        var(--ff-heading);
-    font-size:          var(--fs-400);
+    font-weight: 400;
+    font-family: var(--ff-heading);
+    font-size: var(--fs-400);
 
     -webkit-backdrop-filter: blur(12px);
-    backdrop-filter:    blur(12px);
-    background:         color-mix(in srgb, var(--clr-base), transparent 80%);
-    position:           sticky;
-    top:                0;
-    z-index:            1;
+    backdrop-filter: blur(12px);
+    background: color-mix(in srgb, var(--clr-base), transparent 80%);
+    position: sticky;
+    top: 0;
+    z-index: 1;
 
     & a {
-        color:              inherit;
-        display:            flex;
-        width:              var(--space-l);
-        height:             var(--space-l);
-        align-items:        center;
-        justify-content:    center;
+        color: inherit;
+        display: flex;
+        width: var(--space-l);
+        height: var(--space-l);
+        align-items: center;
+        justify-content: center;
     }
 
     & .icon {
@@ -42,49 +42,51 @@ header {
         justify-content: space-between;
 
         & a {
-            color:          var(--clr-base);
-            border-radius:  var(--space-3xs);
-            background:     linear-gradient(
-                to bottom right,
-                var(--clr-foam),
-                var(--clr-pine)
-            );
+            color: var(--clr-base);
+            border-radius: var(--space-3xs);
+            background: linear-gradient(to bottom right,
+                    var(--clr-foam),
+                    var(--clr-pine));
 
-            &:hover, &:focus, &:focus-visible {
+            &:hover,
+            &:focus,
+            &:focus-visible {
                 outline-offset: 2px;
-                outline:        var(--clr-foam) solid 2px;
+                outline: var(--clr-foam) solid 2px;
 
                 & .icon {
                     scale: 1.19;
                 }
             }
         }
-        
+
         & .icon {
-            color:          var(--clr-base);
-            stroke-width:   40;
-            stroke:         currentColor;
-            scale:          1.7;
+            color: var(--clr-base);
+            stroke-width: 40;
+            stroke: currentColor;
+            scale: 1.7;
         }
     }
 
     & #nav {
-        display:            flex;
-        gap:                var(--space-xs-s);
-        flex:               2;
-        justify-content:    flex-end;
-        align-items:        center;
+        display: flex;
+        gap: var(--space-xs-s);
+        flex: 2;
+        justify-content: flex-end;
+        align-items: center;
 
         & li {
-            display:            flex;
-            align-items:        center;
-            justify-content:    center;
-            list-style:         none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            list-style: none;
 
             & a {
                 border-radius: var(--space-3xs);
 
-                &:hover, &:focus, &:focus-visible {
+                &:hover,
+                &:focus,
+                &:focus-visible {
                     & .icon {
                         scale: 0.7;
                     }
