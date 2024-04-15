@@ -7,5 +7,7 @@ type blog = {
   date : string;
 }
 
+val empty_blog : blog
+
 val get_blogs : unit -> blog list
 val get_blog_by_slug : string -> blog

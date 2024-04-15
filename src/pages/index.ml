@@ -1,14 +1,27 @@
 let title = "Ethan Thoma"
-let slug = "how_not_to_build_a_website.md"
-let _ = Cache.Blogs.get ();;
 
-slug |> Cache.Blogs.get_by_slug
+let rec last_three_blogs blogs =
+  if List.length blogs < 3 then last_three_blogs (blogs @ [ Turso.empty_blog ])
+  else [ List.nth blogs 0; List.nth blogs 1; List.nth blogs 2 ]
+
+let blog_section () =
+  let blogs = Cache.Blogs.get () in
+  Components.Blog_section.component @@ last_three_blogs blogs
 
 let content _ =
-  slug |> Cache.Blogs.get_by_slug |> Components.Hero.component
+  (let open Tyxml.Html in
+   article
+     ~a:[ a_class [ "home" ] ]
+     [ Components.Hero.component; blog_section () ])
   |> Components.View.to_response ~title
 
 let view _ =
-  let blog = Cache.Blogs.get_by_slug slug in
-  let children = [ Components.Hero.component blog ] in
+  let children =
+    let open Tyxml.Html in
+    [
+      article
+        ~a:[ a_class [ "home" ] ]
+        [ Components.Hero.component; blog_section () ];
+    ]
+  in
   Components.Doc.createElement () ~title ~children |> View.to_response

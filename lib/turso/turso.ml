@@ -16,12 +16,12 @@ type blog = {
 
 let empty_blog =
   {
-    filename = "";
-    title = "";
-    description = "";
+    filename = "not_yet_released.md";
+    title = "Not Yet Released";
+    description = "try again in the future!";
     content = "# Not Yet Released\n\nPlease try again in the future!";
     tags = [];
-    date = "";
+    date = "The Future";
   }
 
 let json_to_blog json =

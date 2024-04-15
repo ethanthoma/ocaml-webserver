@@ -1,8 +1,10 @@
-.blog-section {
+.blog-cards {
     display: flex;
     flex-direction: column;
     gap: var(--space-m-l);
     align-items: center;
+    margin-inline: max(calc((100% - var(--max-width)) / 2), var(--space-xs-m));
+    padding-block: var(--space-m-l);
 }
 
 .blog-card {

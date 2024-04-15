@@ -6,6 +6,9 @@
     padding-block: var(--space-m-l);
     padding-inline: var(--space-xs-xl);
 
+    margin-block: var(--space-m-l);
+    margin-inline: max(calc((100% - var(--max-width)) / 2), var(--space-xs-m));
+
     /* margin spacing */
     &>*+* {
         margin-block-start: var(--space-m-l);

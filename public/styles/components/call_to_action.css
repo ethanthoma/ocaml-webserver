@@ -13,6 +13,12 @@
 
     border-radius: var(--space-xs);
 
+    box-shadow: var(--shadow-low);
+
+    a {
+        transition: unset;
+    }
+
     &:hover,
     &:focus,
     &:focus-visible {
@@ -25,6 +31,8 @@
 
         color: var(--clr-text);
         background: var(--clr-surface);
-        box-shadow: inset 0 0 0 2px var(--clr-foam);
+        box-shadow:
+            inset 0 0 0 2px var(--clr-foam),
+            var(--shadow-low);
     }
 }

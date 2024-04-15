@@ -5,9 +5,10 @@ html {
 body {
     --animate-f: cubic-bezier(.4, 0, .2, 1);
     --animate-t: .15s;
+    --max-width: 780px;
 
-    overflow-x: hidden;
-
+    display: flex;
+    flex-direction: column;
     max-width: 100dvw;
 
     background: var(--clr-base);
@@ -17,13 +18,11 @@ body {
     line-height: 1.4;
     letter-spacing: 0.05em;
 
+    overflow-x: hidden;
+
     &>* {
-        --max-width: 780px;
-
         margin-inline: auto;
-
-        padding-block: var(--space-m-l);
-        padding-inline: max(calc((100% - var(--max-width))/2), var(--space-xs-m));
+        width: 100%;
     }
 }
 
@@ -49,17 +48,16 @@ h3 {
 }
 
 a {
-    color: var(--clr-gold);
+    color: var(--clr-iris);
     border-radius: var(--space-3xs);
     cursor: pointer;
-    transition:
-        color var(--animate-t) var(--animate-f),
-        color var(--animate-t) var(--animate-f);
 
     &:hover,
     &:focus,
     &:focus-visible {
-        color: var(--clr-rose);
+        color: var(--clr-gold);
+
+        transition: color var(--animate-t) var(--animate-f);
     }
 
     &:focus-visible {

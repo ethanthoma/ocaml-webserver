@@ -22,7 +22,7 @@
             color: var(--clr-base);
 
             &::placeholder {
-                color: var(--clr-muted);
+                color: var(--clr-base);
                 opacity: 1;
             }
         }

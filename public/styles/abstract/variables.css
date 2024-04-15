@@ -1,22 +1,27 @@
 :root {
-    /* color */
-    --clr-base: hsl(249deg, 22%, 12%);
-    --clr-surface: hsl(247deg, 23%, 15%);
-    --clr-overlay: hsl(248deg, 25%, 18%);
-    --clr-muted: hsl(249deg, 12%, 47%);
-    --clr-subtle: hsl(248deg, 15%, 61%);
-    --clr-text: hsl(245deg, 50%, 91%);
-    --clr-love: hsl(343deg, 76%, 68%);
-    --clr-gold: hsl(35deg, 88%, 72%);
-    --clr-rose: hsl(2deg, 55%, 83%);
-    --clr-pine: hsl(197deg, 49%, 38%);
-    --clr-foam: hsl(189deg, 43%, 73%);
-    --clr-iris: hsl(267deg, 57%, 78%);
-    --clr-high: hsl(248deg, 13%, 36%);
+    color-scheme: light dark;
+
+    --clr-base: hsl(32deg, 57%, 95%);
+    --clr-surface: hsl(35deg, 100%, 98%);
+    --clr-overlay: hsl(33deg, 43%, 91%);
+    --clr-muted: hsl(257deg, 9%, 61%);
+    --clr-subtle: hsl(248deg, 12%, 52%);
+    --clr-text: hsl(248deg, 19%, 40%);
+    --clr-love: hsl(343deg, 35%, 55%);
+    --clr-gold: hsl(35deg, 81%, 56%);
+    --clr-rose: hsl(3deg, 53%, 67%);
+    --clr-pine: hsl(197deg, 53%, 34%);
+    --clr-foam: hsl(189deg, 30%, 48%);
+    --clr-iris: hsl(268deg, 21%, 57%);
+    --clr-low: hsl(25deg, 35%, 93%);
+    --clr-med: hsl(10deg, 9%, 86%);
+    --clr-high: hsl(315deg, 4%, 80%);
 
     /* font family */
-    --ff-heading: 'Montserrat', sans-serif;
-    --ff-body: 'Inter', sans-serif;
+    --ff-heading: 'Montserrat',
+        sans-serif;
+    --ff-body: 'Inter',
+        sans-serif;
 
     /* font size */
     --fs-100: clamp(0.7813rem, 0.7748rem + 0.0325vw, 0.8rem);
@@ -62,4 +67,66 @@
 
     /* Custom pairs */
     --space-xs-xl: clamp(0.875rem, -0.0833rem + 4.7917vi, 3.75rem);
+
+    /* shadow */
+    --clr-shadow: transparent;
+
+    --shadow-low-1: 0px 1px 1.5px color-mix(in srgb, var(--clr-shadow), black 0%);
+    --shadow-low-2: 0px 1.9px 2.8px color-mix(in srgb, var(--clr-shadow), black 23%);
+    --shadow-low-3: 0px 4px 6px color-mix(in srgb, var(--clr-shadow), black 46%);
+    --shadow-low: var(--shadow-low-1),
+        var(--shadow-low-2),
+        var(--shadow-low-3);
+
+    --shadow-med-1: 0px 1px 1.1px color-mix(in srgb, var(--clr-shadow), black 0%);
+    --shadow-med-2: 0px 2.3px 2.6px -1.2px color-mix(in srgb, var(--clr-shadow), black 12%);
+    --shadow-med-3: 0px 4.4px 5px -1.2px color-mix(in srgb, var(--clr-shadow), black 23%);
+    --shadow-med-4: 0px 8.7px 9.8px -1.9px color-mix(in srgb, var(--clr-shadow), black 35%);
+    --shadow-med-5: 0px 16.7px 18.8px -2.5px color-mix(in srgb, var(--clr-shadow), black 46%);
+    --shadow-med: var(--shadow-med-1),
+        var(--shadow-med-2),
+        var(--shadow-med-3),
+        var(--shadow-med-4),
+        var(--shadow-med-5);
+
+    --shadow-high-1: 0px 1px 1.1px color-mix(in srgb, var(--clr-shadow), black 0%);
+    --shadow-high-2: 0px 3.5px 3.9px -0.3px color-mix(in srgb, var(--clr-shadow), black 5%);
+    --shadow-high-3: 0px 6px 6.8px -0.6px color-mix(in srgb, var(--clr-shadow), black 11%);
+    --shadow-high-4: 0px 8.9px 10px -0.8px color-mix(in srgb, var(--clr-shadow), black 16%);
+    --shadow-high-5: 0px 12.9px 14.5px -1.1px color-mix(in srgb, var(--clr-shadow), black 21%);
+    --shadow-high-6: 0px 18.4px 20.7px -1.4px color-mix(in srgb, var(--clr-shadow), black 27%);
+    --shadow-high-7: 0px 26.1px 29.4px -1.7px color-mix(in srgb, var(--clr-shadow), black 32%);
+    --shadow-high-8: 0px 36.3px 40.8px -1.9px color-mix(in srgb, var(--clr-shadow), black 38%);
+    --shadow-high-9: 0px 49.8px 56px -2.2px color-mix(in srgb, var(--clr-shadow), black 43%);
+    --shadow-high-10: -0.1px 67px 75.4px -2.5px color-mix(in srgb, var(--clr-shadow), black 48%);
+    --shadow-high: var(--shadow-high-1),
+        var(--shadow-high-2),
+        var(--shadow-high-3),
+        var(--shadow-high-4),
+        var(--shadow-high-5),
+        var(--shadow-high-6),
+        var(--shadow-high-7),
+        var(--shadow-high-8),
+        var(--shadow-high-9),
+        var(--shadow-high-10);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --clr-base: hsl(249deg, 22%, 12%);
+        --clr-surface: hsl(247deg, 23%, 15%);
+        --clr-overlay: hsl(248deg, 25%, 18%);
+        --clr-muted: hsl(249deg, 12%, 47%);
+        --clr-subtle: hsl(248deg, 15%, 61%);
+        --clr-text: hsl(245deg, 50%, 91%);
+        --clr-love: hsl(343deg, 76%, 68%);
+        --clr-gold: hsl(35deg, 88%, 72%);
+        --clr-rose: hsl(2deg, 55%, 83%);
+        --clr-pine: hsl(197deg, 49%, 38%);
+        --clr-foam: hsl(189deg, 43%, 73%);
+        --clr-iris: hsl(267deg, 57%, 78%);
+        --clr-low: hsl(244deg, 18%, 15%);
+        --clr-med: hsl(249deg, 15%, 28%);
+        --clr-high: hsl(248deg, 13%, 36%);
+    }
 }

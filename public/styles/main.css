@@ -1,3 +1,4 @@
 @import "abstract/index.css";
 @import "base/index.css" layer(base);
+@import "pages/index.css" layer(pages);
 @import "components/index.css" layer(components);

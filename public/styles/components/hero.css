@@ -2,7 +2,6 @@
     display: grid;
 
     gap: var(--space-s-l);
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 
     align-items: center;
 }
@@ -23,125 +22,6 @@
         text-transform: uppercase;
         font-size: var(--fs-100);
         color: var(--clr-pine);
-    }
-}
-
-.hero .grid {
-    display: grid;
-
-    aspect-ratio: 1;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    grid-template-rows: repeat(3, minmax(0, 1fr));
-
-    grid-gap: var(--space-xs);
-
-    &>div {
-        --_base-border-radius: var(--space-m);
-
-        background-color: var(--clr-surface);
-        border-radius: var(--_base-border-radius);
-
-        text-align: center;
-
-        &:hover,
-        &:focus,
-        &:focus-visible {
-            & a {
-                outline: unset;
-
-                transition:
-                    background-color var(--animate-t) var(--animate-f),
-                    box-shadow var(--animate-t) var(--animate-f);
-
-                background-color: var(--clr-muted);
-                box-shadow: inset 0 0 0 2px var(--clr-foam);
-            }
-        }
-    }
-
-    & a {
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-
-        border-radius: inherit;
-
-        padding-inline: var(--space-3xs);
-
-        justify-content: center;
-        align-items: center;
-
-        text-decoration: none;
-        color: var(--clr-text);
-
-        & h2 {
-            font-size: var(--fs-300);
-        }
-
-        & p {
-            margin-block-start: var(--space-2xs);
-
-            font-size: var(--fs-200);
-        }
-    }
-
-    & .one {
-        grid-column: 1 / 3;
-        grid-row: 1 / 3;
-    }
-
-    & .two {
-        border-top-right-radius: calc(4 * var(--_base-border-radius));
-
-        grid-column: 3 / 4;
-        grid-row: 1 / 3;
-
-        background: linear-gradient(to bottom right,
-                var(--clr-iris),
-                var(--clr-love));
-    }
-
-    & .three {
-        border-bottom-left-radius: calc(4 * var(--_base-border-radius));
-
-        grid-column: 1 / 2;
-        grid-row: 3 / 4;
-
-        background: linear-gradient(to bottom right,
-                var(--clr-foam),
-                var(--clr-pine));
-    }
-
-    & .four {
-        grid-column: 2 / 4;
-        grid-row: 3 / 4;
-    }
-
-    & #buy-me-coffee {
-        & .icon {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            font-size: var(--fs-500);
-
-            padding: var(--space-xs);
-
-            border-radius: var(--space-s);
-            background: linear-gradient(to bottom right,
-                    var(--clr-iris),
-                    var(--clr-gold));
-
-            & .content {
-                transition: scale var(--animate-t) var(--animate-f);
-            }
-        }
-
-        &:hover,
-        &:focus {
-            & .icon .content {
-                scale: 1.42857142857;
-            }
-        }
+        font-weight: 700;
     }
 }

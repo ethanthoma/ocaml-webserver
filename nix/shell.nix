@@ -15,6 +15,7 @@ pkgs.mkShell {
         opam
         turso-cli
         pkg-config
+        openssl
     ] ++ devDeps;
 
     shellHook = ''
