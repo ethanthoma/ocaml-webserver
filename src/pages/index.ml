@@ -11,7 +11,7 @@ let blog_section () =
 let content _ =
   (let open Tyxml.Html in
    article
-     ~a:[ a_class [ "home" ] ]
+     ~a:[ a_class [ "home"; "animate-fade-in" ] ]
      [ Components.Hero.component; blog_section () ])
   |> Components.View.to_response ~title
 
@@ -20,7 +20,7 @@ let view _ =
     let open Tyxml.Html in
     [
       article
-        ~a:[ a_class [ "home" ] ]
+        ~a:[ a_class [ "home"; "animate-fade-in" ] ]
         [ Components.Hero.component; blog_section () ];
     ]
   in
