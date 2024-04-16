@@ -33,7 +33,7 @@
 
     & .blog-section {
         --_padding-inline: var(--space-l-2xl);
-        padding-inline: var(--_padding-inline);
+        padding-inline: clamp(var(--space-xs-m), calc((100% - var(--max-width)) / 2), var(--_padding-inline));
 
         background: var(--clr-overlay);
 
@@ -63,22 +63,31 @@
         }
 
         & section {
-            --grid-max-width: 77.50rem;
             --grid-gutter: var(--space-s-l, clamp(1.125rem, 0.6467rem + 2.3913vw, 2.5rem));
             --content-width: calc(4 * var(--space-xl));
 
             display: grid;
             grid-template-columns: repeat(var(--grid-columns), 1fr);
             grid-gap: var(--grid-gutter);
-            max-width: var(--grid-max-width);
 
-            & .blog-card {
+            & .card {
+                box-shadow: var(--shadow-low);
+
                 & a {
+                    color: inherit;
+                    display: flex;
+                    flex-direction: column;
                     height: 100%;
-                    box-shadow: var(--shadow-low);
+                    text-decoration: none;
 
-                    &:hover {
-                        box-shadow: var(--shadow-med);
+                    &:hover,
+                    &:focus,
+                    &:focus-visible {
+                        color: inherit;
+                    }
+
+                    & p {
+                        margin-top: var(--space-xs);
                     }
 
                     & div {
@@ -87,6 +96,12 @@
 
                         color: var(--clr-subtle);
                     }
+                }
+
+                &:hover,
+                &:focus,
+                &:focus-visible {
+                    box-shadow: var(--shadow-med);
                 }
             }
         }
@@ -98,7 +113,7 @@
     --grid-columns: 2;
 }
 
-.blog-card {
+.blog-section .card {
     grid-column-end: span 4;
 }
 
@@ -107,21 +122,21 @@
         --grid-columns: 12;
     }
 
-    .blog-card {
+    .blog-section .card {
         grid-column-end: span 6;
     }
 
-    .blog-section .blog-card:nth-child(3) {
+    .blog-section .card:nth-child(3) {
         display: none;
     }
 }
 
 @media (min-width: 1200px) {
-    .blog-card {
+    .blog-section .card {
         grid-column-end: span 4;
     }
 
-    .blog-section .blog-card:nth-child(3) {
+    .blog-section .card:nth-child(3) {
         display: unset;
     }
 }

@@ -1,0 +1,21 @@
+.card {
+    --animate-t: 0.2s;
+    --animate-f: cubic-bezier(0, 0, .2, 1);
+    --clr-bg: var(--clr-surface);
+    --clr-fg: var(--clr-text);
+
+    border-radius: var(--space-s);
+    padding: var(--space-m);
+
+    background-color: var(--clr-bg);
+    color: var(--clr-fg);
+
+    transition: scale var(--animate-t) var(--animate-f);
+
+    &:hover,
+    &:focus,
+    &:focus-visible {
+        --clr-bg: var(--clr-muted);
+        scale: 1.015;
+    }
+}

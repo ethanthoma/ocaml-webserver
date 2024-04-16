@@ -1,9 +1,8 @@
 open Tyxml;
 
 let blog_card = (blog: Turso.blog) =>
-  <article className="blog-card">
+  <article className="card staggered-load-child" tabindex=0>
     <a
-      tabindex=0
       aria_label=[blog.description]
       _hx_get={"/blogs/" ++ blog.filename ++ "/content"}
       _hx_target="main"
@@ -28,5 +27,7 @@ let component = blogs =>
         "See More"
       </a>
     </header>
-    <section> ...{List.map(blog_card, blogs)} </section>
+    <section className="staggered-load">
+      ...{List.map(blog_card, blogs)}
+    </section>
   </section>;

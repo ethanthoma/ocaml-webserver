@@ -1,4 +1,5 @@
 body>header {
+
     display: flex;
 
     flex-wrap: wrap;
@@ -14,6 +15,11 @@ body>header {
     position: sticky;
     top: 0;
     z-index: 2;
+
+    &>* {
+        --clr-bg-parent: var(--clr-base);
+    }
+
 
     & a {
         color: inherit;
@@ -38,32 +44,6 @@ body>header {
         gap: var(--space-xs-s);
         align-items: center;
         justify-content: space-between;
-
-        & a {
-            color: var(--clr-base);
-            border-radius: var(--space-3xs);
-            background: linear-gradient(to bottom right,
-                    var(--clr-foam),
-                    var(--clr-pine));
-
-            &:hover,
-            &:focus,
-            &:focus-visible {
-                outline-offset: 2px;
-                outline: var(--clr-foam) solid 2px;
-
-                & .icon {
-                    scale: 1.19;
-                }
-            }
-        }
-
-        & .icon {
-            color: var(--clr-base);
-            stroke-width: 40;
-            stroke: currentColor;
-            scale: 1.7;
-        }
     }
 
     & #nav {

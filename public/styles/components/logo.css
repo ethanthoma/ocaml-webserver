@@ -1,0 +1,42 @@
+.logo {
+    border-radius: var(--space-3xs);
+    height: var(--space-l);
+
+    background-color: var(--clr-bg);
+    color: var(--clr-fg);
+    box-shadow:
+        inset 0 0 0 2px var(--clr-bg),
+        inset 0 0 0 4px var(--clr-fg);
+
+    & .icon {
+        color: var(--clr-fg);
+        stroke-width: 60px;
+        stroke: currentColor;
+        scale: 1.4;
+        transition: unset;
+    }
+
+    &:hover,
+    &:focus,
+    &:focus-visible {
+        outline-offset: -2px;
+        outline: var(--clr-foam) solid 2px;
+    }
+}
+
+/* bg should always be light, fg always dark */
+@media (prefers-color-scheme: light) {
+    .logo {
+        --clr-bg: var(--clr-bg-parent, var(--clr-base));
+        --clr-fg: var(--clr-text);
+
+        box-shadow: inset 0 0 0 2px var(--clr-fg);
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .logo {
+        --clr-bg: var(--clr-text);
+        --clr-fg: var(--clr-bg-parent, var(--clr-base));
+    }
+}

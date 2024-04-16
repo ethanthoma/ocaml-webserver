@@ -1,8 +1,11 @@
-@import "header.css";
-@import "icon.css";
-@import "search.css";
-@import "call_to_action.css";
-@import "fancy.css";
-@import "footer.css";
 @import "blog.css";
 @import "blog_card.css";
+@import "call_to_action.css";
+@import "card.css";
+@import "fancy.css";
+@import "footer.css";
+@import "header.css";
+@import "icon.css";
+@import "logo.css";
+@import "search.css";
+@import "tags.css";
