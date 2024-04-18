@@ -4,7 +4,7 @@ let createElement = (~title: string, ~children, ()) => {
   let description =
     <meta
       name="description"
-      content="Ethan Thoma's personal website written on Ocaml using the HOT stack. Blogging and machine learning related."
+      content="Ethan Thoma's personal website written in Ocaml using the HOT stack. Blogging and machine learning related."
     />;
 
   let fonts = <link href="/public/fonts/fonts.css" rel="stylesheet" />;

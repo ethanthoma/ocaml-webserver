@@ -66,12 +66,14 @@
             --grid-gutter: var(--space-s-l, clamp(1.125rem, 0.6467rem + 2.3913vw, 2.5rem));
             --content-width: calc(4 * var(--space-xl));
 
+            width: 100%;
             display: grid;
             grid-template-columns: repeat(var(--grid-columns), 1fr);
             grid-gap: var(--grid-gutter);
 
             & .card {
                 box-shadow: var(--shadow-low);
+                cursor: pointer;
 
                 & a {
                     color: inherit;
