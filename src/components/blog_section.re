@@ -1,9 +1,10 @@
 open Tyxml;
 
 let blog_card = (blog: Turso.blog) =>
-  <article className="card staggered-load-child" tabindex=0>
+  <article className="card staggered-load-child">
     <a
       aria_label=[blog.description]
+      href={"/blogs/" ++ blog.filename}
       _hx_get={"/blogs/" ++ blog.filename ++ "/content"}
       _hx_target="main"
       _hx_push_url={"/blogs/" ++ blog.filename}
@@ -19,12 +20,12 @@ let component = blogs =>
     <header>
       <h2> "My Blogs" </h2>
       <a
-        tabindex=0
+        href="/explore"
         _hx_get="/explore/content"
         _hx_target="main"
         _hx_push_url="/explore"
         _hx_swap="settle:150ms">
-        "See More"
+        "See All"
       </a>
     </header>
     <section className="staggered-load">

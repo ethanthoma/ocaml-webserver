@@ -32,8 +32,7 @@
     }
 
     & .blog-section {
-        --_padding-inline: var(--space-l-2xl);
-        padding-inline: clamp(var(--space-xs-m), calc((100% - var(--max-width)) / 2), var(--_padding-inline));
+        padding-inline: clamp(var(--space-xs-m), calc((100% - var(--max-width)) / 2), var(--space-l-2xl));
 
         background: var(--clr-overlay);
 
@@ -53,11 +52,13 @@
             & a {
                 color: var(--clr-text);
                 margin-block: auto;
+                text-decoration: none;
+                font-size: var(--fs-200);
 
                 &:hover,
                 &:focus,
                 &:focus-visible {
-                    color: var(--clr-iris);
+                    color: var(--clr-gold);
                 }
             }
         }
@@ -70,49 +71,13 @@
             display: grid;
             grid-template-columns: repeat(var(--grid-columns), 1fr);
             grid-gap: var(--grid-gutter);
-
-            & .card {
-                box-shadow: var(--shadow-low);
-                cursor: pointer;
-
-                & a {
-                    color: inherit;
-                    display: flex;
-                    flex-direction: column;
-                    height: 100%;
-                    text-decoration: none;
-
-                    &:hover,
-                    &:focus,
-                    &:focus-visible {
-                        color: inherit;
-                    }
-
-                    & p {
-                        margin-top: var(--space-xs);
-                    }
-
-                    & div {
-                        margin-block-start: auto;
-                        padding-block-start: var(--space-m);
-
-                        color: var(--clr-subtle);
-                    }
-                }
-
-                &:hover,
-                &:focus,
-                &:focus-visible {
-                    box-shadow: var(--shadow-med);
-                }
-            }
         }
     }
 }
 
 
 :root {
-    --grid-columns: 2;
+    --grid-columns: 4;
 }
 
 .blog-section .card {

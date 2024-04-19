@@ -5,17 +5,54 @@
     --clr-fg: var(--clr-text);
 
     border-radius: var(--space-s);
+
     padding: var(--space-m);
 
     background-color: var(--clr-bg);
+    box-shadow: var(--shadow-low);
     color: var(--clr-fg);
+    position: relative;
 
     transition: scale var(--animate-t) var(--animate-f);
 
     &:hover,
     &:focus,
-    &:focus-visible {
+    &:focus-visible,
+    &:focus-within {
         --clr-bg: var(--clr-muted);
         scale: 1.015;
+        box-shadow: var(--shadow-med);
+    }
+
+    & a {
+        color: inherit;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        text-decoration: none;
+
+        &:hover,
+        &:focus,
+        &:focus-visible {
+            color: inherit;
+            outline: unset;
+        }
+
+        & p {
+            margin-top: var(--space-xs);
+        }
+
+        & div {
+            margin-block-start: auto;
+            padding-block-start: var(--space-m);
+
+            color: var(--clr-subtle);
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+        }
     }
 }

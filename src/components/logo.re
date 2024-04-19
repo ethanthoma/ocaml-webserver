@@ -3,7 +3,7 @@ open Tyxml;
 let createElement = () =>
   <a
     className="logo"
-    href=""
+    href="/"
     aria_label="The Home page"
     _hx_get="/content"
     _hx_target="main"

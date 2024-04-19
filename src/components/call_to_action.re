@@ -5,6 +5,7 @@ let createElement = () => {
     className="call-to-action"
     aria_label="See all the blogs"
     tabindex="0"
+    href="/explore"
     _hx_get="/explore/content"
     _hx_target="main"
     _hx_push_url="/explore"
