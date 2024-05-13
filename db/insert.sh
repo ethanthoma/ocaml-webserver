@@ -1,10 +1,10 @@
-slug="how_not_to_build_a_website.md"
-title="How not to Build a Website: Part One"
-description="How complicated can you make a static site?"
+slug="how_to_build_a_website.md"
+title="How to Build a Website: Part Two"
+description="Combing Ocaml, HTMX, Go, NIx, etc to make a simple website."
 file_path="./blogs/${slug}"
 contents="$(cat "$file_path")"
 contents="$(echo "$contents" | sed "s/'/''/g")"
-tags="Nix, htmx, webdev, Bazel, Pulumi"
+tags="Nix, htmx, webdev, Ocaml, Go, C"
 
 sql="INSERT INTO blogs (title, slug, description, content, tags, date) VALUES('${title}', '${slug}', '${description}', '${contents}', '${tags}', date());"
 

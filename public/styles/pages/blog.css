@@ -78,6 +78,11 @@
         }
     }
 
+    & blockquote {
+        border-inline-start: var(--space-3xs) solid var(--clr-high);
+        padding-inline-start: var(--space-3xs);
+    }
+
     .explore-footer {
         width: 100%;
         display: flex;

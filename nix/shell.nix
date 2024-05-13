@@ -19,6 +19,7 @@ pkgs.mkShell {
     ] ++ devDeps;
 
     shellHook = ''
+        turso config set token "$TURSO_TOKEN"
         eval $(opam env --switch=website)
     '';
 }
