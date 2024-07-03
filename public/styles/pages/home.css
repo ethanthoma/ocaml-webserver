@@ -33,12 +33,13 @@
 
     & .blog-section {
         padding-inline: clamp(var(--space-xs-m), calc((100% - var(--max-width)) / 2), var(--space-l-2xl));
+        padding-block-start: calc(var(--space-l-2xl) / 2);
 
         background: var(--clr-overlay);
 
         display: flex;
         flex-direction: column;
-        gap: var(--space-m-l);
+        gap: calc(var(--space-l-2xl) / 2);
         align-items: center;
 
         & header {

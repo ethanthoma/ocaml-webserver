@@ -1,15 +1,14 @@
 body>header {
-
     display: flex;
 
     flex-wrap: wrap;
     gap: var(--space-s-m);
     padding-block: var(--space-s-m);
-    padding-inline: max(calc((100% - var(--max-width)) / 2), var(--space-xs-m));
+    padding-inline: clamp(var(--space-xs-m), calc((100% - var(--max-width)) / 2), var(--space-l-2xl));
 
     font-weight: 400;
     font-family: var(--ff-heading);
-    font-size: var(--fs-400);
+    font-size: var(--fs-300);
 
     background: var(--clr-base);
     position: sticky;
@@ -20,21 +19,18 @@ body>header {
         --clr-bg-parent: var(--clr-base);
     }
 
-
     & a {
         color: inherit;
         display: flex;
-        width: var(--space-l);
-        height: var(--space-l);
         align-items: center;
         justify-content: center;
-    }
+        text-decoration: none;
 
-    & .icon {
-        height: 100%;
-        width: unset;
-        aspect-ratio: 1;
-        transition: scale var(--animate-t) var(--animate-f);
+        &:hover,
+        &:focus,
+        &:focus-visible {
+            color: var(--clr-gold);
+        }
     }
 
     & #left {
@@ -44,9 +40,16 @@ body>header {
         gap: var(--space-xs-s);
         align-items: center;
         justify-content: space-between;
+
+        & .icon {
+            height: 100%;
+            width: unset;
+            aspect-ratio: 1;
+            transition: scale var(--animate-t) var(--animate-f);
+        }
     }
 
-    & #nav {
+    & nav {
         display: flex;
         gap: var(--space-xs-s);
         flex: 2;

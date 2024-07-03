@@ -27,10 +27,10 @@ let () =
   @@ logger @@ router @@ public
   @ [
       get "/" Pages.Index.view;
+      get "/content" Pages.Index.content;
       get "/" @@ static "./public/seo";
       get "/healthy" get_healthy_handler;
-      get "/content" Pages.Index.content;
-      get "/search" Search.content;
+      get "/search/content" Search.content;
       get "/explore" Pages.Explore.view;
       get "/explore/content" Pages.Explore.content;
       get "/blogs/:slug" Pages.Blog.view;

@@ -18,13 +18,13 @@ let blog_card = (blog: Turso.blog) =>
 let component = blogs =>
   <section className="blog-section animate-fade-in">
     <header>
-      <h2> "My Blogs" </h2>
+      <h2> "Latest Blogs" </h2>
       <a
         href="/explore"
         _hx_get="/explore/content"
         _hx_target="main"
         _hx_push_url="/explore"
-        _hx_swap="settle:150ms">
+        _hx_swap="settle:150ms show:body:top">
         "See All"
       </a>
     </header>

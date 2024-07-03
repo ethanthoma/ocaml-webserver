@@ -1,4 +1,4 @@
-slug="how_not_to_build_a_website.md"
+slug="how_to_build_a_website.md"
 file_path="./blogs/${slug}"
 contents="$(cat "$file_path")"
 contents="$(echo "$contents" | sed "s/'/''/g")"

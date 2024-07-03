@@ -1,32 +1,16 @@
 open Tyxml;
 
 let nav =
-  <ul id="nav">
-    <li>
-      <a
-        href="https://github.com/ethanthoma"
-        className="outline"
-        aria_label="My GitHub account">
-        <Icon src="./public/svg/logo-github.svg" alt="github" />
-      </a>
-    </li>
-    <li>
-      <a
-        href="https://twitter.com/EthanBThoma"
-        className="animate outline"
-        aria_label="My Twitter account">
-        <Icon src="./public/svg/logo-twitter.svg" alt="twitter" />
-      </a>
-    </li>
-    <li>
-      <a
-        href="mailto:ethoma@student.ubc.ca"
-        className="animate outline"
-        aria_label="My email address">
-        <Icon src="./public/svg/mail.svg" alt="email" />
-      </a>
-    </li>
-  </ul>;
+  <nav>
+    <a
+      href="#about"
+      href="/explore"
+      _hx_get="/explore/content"
+      _hx_target="main"
+      _hx_push_url="/explore"
+      _hx_swap="settle:150ms show:body:top">
+      "Blogs"
+    </a>
+  </nav>;
 
-let component =
-  <header> <div id="left"> <Logo /> Search.component </div> nav </header>;
+let component = <header> <div id="left"> <Logo /> </div> nav </header>;

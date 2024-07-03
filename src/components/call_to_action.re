@@ -9,7 +9,7 @@ let createElement = () => {
     _hx_get="/explore/content"
     _hx_target="main"
     _hx_push_url="/explore"
-    _hx_swap="settle:150ms">
+    _hx_swap="settle:150ms show:body:top">
     "Explore More"
   </a>;
 };

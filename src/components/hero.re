@@ -6,10 +6,10 @@ let component =
       <p className="subtitle fancy"> "computer science graduate student" </p>
       <h1 className="title"> "Ethan Thoma" </h1>
       <p className="description">
-        "Studied computer science, data science, and
-                statistics. Focused on ML in NLP, statistical
-                learning, and explainable ML. This is a collection
-                of my thoughts, code, and research..."
+        "I am a grad student at UBC. I focus in ML, NLP, and deep learning."
+        <br />
+        <br />
+        "This is a collection of my thoughts, research, and code..."
       </p>
       <Call_to_action />
     </div>

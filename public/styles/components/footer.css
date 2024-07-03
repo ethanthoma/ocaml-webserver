@@ -18,8 +18,37 @@ body>footer {
         margin-block-start: var(--space-s);
     }
 
-    & nav {
+    & #nav {
+        list-style: none;
         display: flex;
         gap: var(--space-s);
+    }
+
+    & #contact {
+        list-style: none;
+        display: flex;
+        gap: var(--space-xs-s);
+        align-items: center;
+        justify-content: center;
+
+        & a {
+            display: flex;
+            border-radius: var(--space-3xs);
+
+            & .icon {
+                height: 100%;
+                aspect-ratio: 1;
+                transition: scale var(--animate-t) var(--animate-f);
+                font-size: var(--fs-400);
+            }
+
+            &:hover,
+            &:focus,
+            &:focus-visible {
+                & .icon {
+                    scale: 0.7;
+                }
+            }
+        }
     }
 }
