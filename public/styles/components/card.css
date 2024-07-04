@@ -9,7 +9,6 @@
     padding: var(--space-m);
 
     background-color: var(--clr-bg);
-    box-shadow: var(--shadow-low);
     color: var(--clr-fg);
     position: relative;
 
@@ -20,8 +19,6 @@
     &:focus-visible,
     &:focus-within {
         --clr-bg: var(--clr-muted);
-        scale: 1.015;
-        box-shadow: var(--shadow-med);
     }
 
     & a {

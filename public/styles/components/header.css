@@ -4,7 +4,7 @@ body>header {
     flex-wrap: wrap;
     gap: var(--space-s-m);
     padding-block: var(--space-s-m);
-    padding-inline: clamp(var(--space-xs-m), calc((100% - var(--max-width)) / 2), var(--space-l-2xl));
+    padding-inline: var(--padding-inline-l);
 
     font-weight: 400;
     font-family: var(--ff-heading);
@@ -51,7 +51,7 @@ body>header {
 
     & nav {
         display: flex;
-        gap: var(--space-xs-s);
+        gap: var(--space-s-l);
         flex: 2;
         justify-content: flex-end;
         align-items: center;

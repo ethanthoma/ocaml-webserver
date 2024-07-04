@@ -109,6 +109,14 @@
         var(--shadow-high-8),
         var(--shadow-high-9),
         var(--shadow-high-10);
+
+    /* utils */
+    --animate-f: cubic-bezier(.4, 0, .2, 1);
+    --animate-t: .15s;
+
+    --max-width: 780px;
+    --padding-inline-m: max(calc((100% - var(--max-width)) / 2), var(--space-xs-m));
+    --padding-inline-l: clamp(var(--space-xs-m), calc((100% - var(--max-width)) / 2), var(--space-xl-3xl));
 }
 
 @media (prefers-color-scheme: dark) {

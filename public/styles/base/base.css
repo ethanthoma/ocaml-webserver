@@ -3,10 +3,6 @@ html {
 }
 
 body {
-    --animate-f: cubic-bezier(.4, 0, .2, 1);
-    --animate-t: .15s;
-    --max-width: 780px;
-
     display: flex;
     flex-direction: column;
     max-width: 100dvw;
